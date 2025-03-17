@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://img.icons8.com/ios-glyphs/30/password--v1.png" type="image/x-icon">
+    <title>Password Generate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    
+</head>
+<body>
+    <div class="password-generator">
+	<h2>Password Generator</h2>
+	<div class="box">
+		<div class="password-box">
+			<input type="text" id="password" readonly title="Generated Password" placeholder="" />
+			<button id="copy-password-btn">
+				<i class="fa fa-clone"></i>
+			</button>
+		</div>
+		<div class="controls">
+			<div class="range">
+				<label for="password-length-input">
+					<span>Password length</span>
+					<span id="password-length-value">10</span>
+				</label>
+				<input type="range" min="8" max="20" value="10" id="password-length-input">
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" id="uppercase">
+				<label for="uppercase">Includes uppercase</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" id="lowercase" checked>
+				<label for="lowercase">Includes lowercase</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" id="numbers">
+				<label for="numbers">Includes numbers</label>
+			</div>
+			<div class="checkbox">
+				<input type="checkbox" id="special">
+				<label for="special">Includes special symbols (%$@_)</label>
+			</div>
+			<div class="button">
+				<button id="generate-password-btn">
+					Generate password
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>

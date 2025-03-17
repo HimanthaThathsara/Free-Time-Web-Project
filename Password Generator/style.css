@@ -1,0 +1,108 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body {
+	font-family:"Roboto mono", sans-serif;
+	background:#1a1818;
+	display:grid;
+	place-items:center;
+	height:100vh;
+}
+.password-generator {
+	width: calc(100% - 40px);
+	max-width:350px;
+}
+.password-generator h2 {
+	text-align:center;
+	color:#ddd;
+	font-size:1.15em;
+	margin-bottom:0.2em;
+}
+.password-generator .box {
+	display:grid;
+	gap:10px;
+	padding:10px 0px;
+}
+.password-generator .password-box {
+	background:#222;
+	border-radius:5px;
+	overflow:hidden;
+	position:relative;
+}
+.password-generator #password {
+	width:100%;
+	height:40px;
+	background:transparent;
+	border:none;
+	outline:none;
+	padding:10px;
+	font-size:1em;
+	color:#fff;
+	font-family:"Roboto mono",sans-serif;
+}
+.password-generator #copy-password-btn {
+	position:absolute;
+	width:25px;
+	height:25px;
+	top:50%;
+	right:10px;
+	transform:translateY(-50%);
+	border-radius:50%;
+	font-size:13px;
+	border:none;
+	outline:none;
+	background:#333;
+	color:#eee;
+	cursor:pointer;
+}
+.password-generator #copy-password-btn:active {
+	background:#555;
+}
+.password-generator .controls {
+	background:#222;
+	display:grid;
+	gap:10px;
+	padding:10px;
+	border-radius:5px;
+	overflow:hidden;
+}
+.password-generator .controls label {
+	display:flex;
+	justify-content:space-between;
+	font-size:14px;
+	color:#eee;
+	user-select:none;
+}
+.password-generator #password-length-value {
+	color:#c7e562;
+}
+.password-generator input {
+	accent-color: #c7e562;
+}
+.password-generator #password-length-input {
+	width:100%;
+	margin-top:8px;
+}
+.password-generator .controls .checkbox {
+	display:flex;
+	gap:10px;
+	align-items:center;
+}
+.password-generator #generate-password-btn {
+	margin:5px 0px;
+	width:100%;
+	height:40px;
+	font-size:15px;
+	background:#c7e562;
+	color:#111;
+	border:none;
+	outline:none;
+	border-radius:5px;
+	cursor:pointer;
+	font-weight:600;
+}
+.password-generator #generate-password-btn:active {
+	background:#d7e582;
+}
