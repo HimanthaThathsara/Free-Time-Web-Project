@@ -1,0 +1,29 @@
+body{
+    min-height: 100vh;
+    background-color: whitesmoke;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zoom{
+    width: max-content;
+    position: relative;
+}
+.zoom img{
+    width: 500px;
+}
+#imgZoom{
+    transform: scale(1.5);
+    pointer-events: none;
+    --zoom-x: 50%;
+    --zoom-y: 50%;
+    clip-path: circle(
+    100px at var(--zoom-x) var(--zoom-y)
+    );
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
