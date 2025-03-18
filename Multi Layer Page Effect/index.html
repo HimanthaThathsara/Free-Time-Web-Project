@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Layer Page Effects</title>
+
+<style>
+html {
+	box-sizing: border-box;
+}
+  
+*,  
+*:before,
+*:after {
+	box-sizing: inherit;
+	padding: 0;
+}
+  
+body {
+	height: 100%;
+	overflow: hidden;
+}
+  
+.buttons {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	z-index: -1;
+}
+.buttons button {
+	border: none;
+	background: rgba(0,0,0,0.02);
+	border-radius: 5px;
+	cursor: pointer;
+}
+.buttons button:hover {
+	background: rgba(0,0,0,0.04);
+}
+#top {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+}
+#bottom {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+#left {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+}
+#right {
+	position: absolute;
+	top: 50%;
+	right: 0;
+}
+  
+.top-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    background: #ff5733;
+    transition: all 0.9s cubic-bezier(0.6, 0.05, 0.4, 1);
+}
+.top-layer.active {
+    top: 100%;
+}
+.top-layer--2 {
+    background: #33ff57;
+    transition-delay: 0.6s;
+}
+.top-layer--3 {
+    background: #3357ff;
+    transition-delay: 0.4s;
+}
+.top-layer--4 {
+    background: #ff33a1;
+    transition-delay: 0.2s;
+}
+.top-layer--5 {
+    background: #ff8c33;
+    transition-delay: 0.1s;
+}
+  
+.bottom-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    bottom: auto;
+    right: auto;
+    background: #33d1ff;
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.bottom-layer.active {
+    top: -100%;
+}
+.bottom-layer--2 {
+    background: #ff33d1;
+    transition-delay: 0.12s;
+}
+.bottom-layer--3 {
+    background: #d1ff33;
+    transition-delay: 0.4s;
+}
+
+.left-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: -100%;
+    bottom: auto;
+    right: auto;
+    background: #ff3333;
+    transition: all 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.left-layer.active {
+    left: 100%;
+}
+.left-layer--2 {
+    background: #33ff8c;
+    transition-delay: 0.3s;
+}
+.left-layer--3 {
+    background: #8c33ff;
+    transition-delay: 0.12s;
+}
+.left-layer--4 {
+    background: #ff338c;
+    transition-delay: 0.08s;
+}
+
+.right-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    left: 100%;
+    bottom: auto;
+    right: auto;
+    background: #33ff33;
+    transition: all 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.right-layer.active {
+    left: -100%;
+}
+.right-layer--2 {
+    background: #ff8c8c;
+    transition-delay: .3s;
+}
+.right-layer--3 {
+    background: #8cff33;
+    transition-delay: .2s;
+}
+}
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-layer"></div>
+        <div class="top-layer top-layer--2"></div>
+        <div class="top-layer top-layer--3"></div>
+        <div class="top-layer top-layer--4"></div>
+        <div class="top-layer top-layer--5"></div>
+        
+        <div class="bottom-layer"></div>
+        <div class="bottom-layer bottom-layer--2"></div>
+        <div class="bottom-layer bottom-layer--3"></div>
+        
+        <div class="left-layer"></div>
+        <div class="left-layer left-layer--2"></div>
+        <div class="left-layer left-layer--3"></div>
+        <div class="left-layer left-layer--4"></div>
+        
+        <div class="right-layer"></div>
+        <div class="right-layer right-layer--2"></div>
+        <div class="right-layer right-layer--3"></div>
+    </div>
+
+    <div class="buttons">
+        <button class= "Buttons" id="top">
+            <img src="https://icongr.am/feather/arrow-down.svg" alt="Arrow Down">
+        </button>
+        <button class= "Buttons" id="bottom">
+            <img src="https://icongr.am/feather/arrow-up.svg" alt="Arrow Up">
+        </button>
+        <button class= "Buttons" id="left">
+            <img src="https://icongr.am/feather/arrow-right.svg" alt="Arrow Right">
+        </button>
+        <button class= "Buttons" id="right">
+            <img src="https://icongr.am/feather/arrow-left.svg" alt="Arrow Left">
+        </button>
+    </div>
+</body>
+<script>
+const buttons = document.getElementsByTagName("button");
+
+for (const button of buttons) {
+  button.addEventListener('click', () => {
+     var id = button.getAttribute("id");
+    console.log(id);
+     var layerClass = "." + id+ "-layer";
+     var layers = document.querySelectorAll(layerClass);
+     for (const layer of layers) {
+       layer.classList.toggle("active");
+     }
+  });
+}
+</script>
+</html>
