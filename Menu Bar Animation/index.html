@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/circular-revealer@0.0.8/dist/index.iife.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <body>
+    <header>
+      <div>
+        <button class="header__button nav-btn-js" type="button">
+            <i class="bi bi-list" ></i>
+        </button>
+        <nav class="header__nav nav-js" data-active="false">
+          <ul class="header__menu">
+            <li class="header__menu-item"><a href="#">Home</a></li>
+            <li class="header__menu-item"><a href="#">Projects</a></li>
+            <li class="header__menu-item"><a href="#">About</a></li>
+            <li class="header__menu-item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealerNav = window.revealer({
+          revealElementSelector: ".nav-js",
+          options: {
+            anchorSelector: ".nav-btn-js",
+          },
+        });
+
+        const actionBtn = document.querySelector(".nav-btn-js");
+        actionBtn.addEventListener("click", () => {
+          if (!revealerNav.isRevealed()) {
+            revealerNav.reveal();
+            actionBtn.setAttribute("data-open", true);
+          } else {
+            revealerNav.hide();
+            actionBtn.setAttribute("data-open", false);
+          }
+        });
+      });
+    </script>
+  </body>
+</body>
+</html>
