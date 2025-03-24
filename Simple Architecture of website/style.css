@@ -1,0 +1,114 @@
+nav {
+    border-radius: 20px;
+}
+
+.toggleSwitch {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(39, 39, 39);
+  border-radius: 35%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+#checkboxInput {
+  display: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: white;
+}
+
+.user {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.user svg {
+  width: 18px;
+}
+
+#checkboxInput:active + .toggleSwitch {
+  transform: scale(0.7);
+}
+
+#checkboxInput:hover + .toggleSwitch {
+  background-color: rgb(61, 61, 61);
+}
+
+#container-2 {
+  background-image: url("dasdasdasdasdas.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px; /*add @ media point */
+}
+
+#text{
+  visibility: hidden;
+}
+
+h2 {
+  color:#069c54;
+}
+
+.col-md-6 div {
+  border-radius: 20px;
+}
+
+.card-body {
+  border-radius: 20px;
+}
+#app-text{
+  text-align: center;
+  margin: 25% 0 0 0;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .toggleSwitch {
+    display: none;
+  }
+}
+
+.person-circle {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.bi-feature{
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 430px) {
+    #img-fluid{
+        width: 50px;
+        height: 50px; /*--set the right size--*/
+    }
+  }
+  
