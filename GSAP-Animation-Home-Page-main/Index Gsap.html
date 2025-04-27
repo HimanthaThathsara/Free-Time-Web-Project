@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<title>Index</title> 
+</head>
+<style>
+    /*========================================*/
+    /*======INTERNAL CSS======*/
+    /*========================================*/
+    body{
+        background-image: url(main-bg.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        position: absolute;
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        padding-left: 25%;
+        padding-right: 25%;
+        color: #ffffff;
+        font-size: 18px;
+    }
+    .nav-logo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        color: #ffffff;
+    }
+    
+    .nav-items{
+        display: flex;
+        padding-left: 400px;
+    }
+    
+    .menu{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    .menu-list{
+        padding-left: 50px;
+    }
+    a{
+        text-decoration: none;
+        color: #ffffff;
+    }
+    .nav-menu{
+        display: flex;
+    }
+    #menu{
+        display: flex;
+        flex-direction: row;
+        padding-left: 50px;
+        color: #ffffff;
+    }
+    
+    /*========================================*/
+    /*======END OF THE NAV-BAR CSS======*/
+    /*========================================*/
+    
+    .home{
+        text-align: center;
+        margin-left: 50%;
+        margin-top: 30px;
+    }
+    /*========================================*/
+    /*======ANIMATED HEADING CSS CSS======*/
+    /*========================================*/
+    
+    h1{
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        font-size: 6rem;
+        font-weight: 700;
+        letter-spacing: 10px;
+        margin-top: -30px;
+    }
+    
+    h2{
+        color: rgb(255, 255, 255);
+        font-size: 1.8rem;
+        font-weight: 300;
+    }
+    
+    /*========================================*/
+    /*======ANIMATED IMAGE CSS======*/
+    /*========================================*/
+    .img-2{
+        background-image: url(center-object.png);
+        background-repeat: no-repeat;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        overflow: hidden;
+    }
+    .img-3{
+        background-image: url(top-object.png);
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: -10;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+    }
+    .img-4{
+        background-image: url(bottom-object.png);
+        background-repeat: no-repeat; 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        left: 0;
+    }
+    /*========================================*/
+    /*======FINISHING THE INTERNAL CSS======*/
+    /*========================================*/
+    </style>
+<body>
+    <!--=======================================================-->
+                <!--======START NAV-BAR======-->
+    <!--=======================================================-->
+        <div class="nav">
+
+            <div class="nav-logo"> 
+                <!--=================-->
+                <!--if you can add svg to logo if you want-->
+                 <!--=================-->
+               ANIME
+            </div>
+            
+            <div class="nav-items">
+                <ul class="menu">
+                    <li class="menu-list">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="#">History</a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="#">Blog</a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-menu">
+                <i class="bi bi-list" id="menu"></i>
+            </div>
+
+       </div>
+       <!--=======================================================-->
+                       <!--======END NAV-BAR======-->
+       <!--=======================================================-->
+
+
+       <!--=======================================================-->
+                       <!--======START SECTION======-->
+       <!--=======================================================-->
+
+        <section class="home">
+
+            <div class="home-content">
+                <h2>Welcome to</h2>
+                <h1>ANIME <span>WORLD</span></h1> 
+            </div>
+
+            <div class="images">
+                <div class="img-2"></div>
+                <div class="img-3"></div>
+                <div class="img-4"></div>
+            </div>
+        
+        </section>
+    <!--=======================================================-->
+                    <!--======END SECTION======-->
+    <!--=======================================================-->
+
+
+
+    <!--=======================================================-->
+                    <!--======START SCRIPT======-->
+    <!--=======================================================-->
+            <script>
+                gsap.from('.img-2', 1.2, {opacity:0, y:-150, delay: 0.5})
+                gsap.from('.img-3', 1.2, {opacity: 0, y:150, delay: 1.9})
+                gsap.from('.img-4', 1.2, {opacity: 0, y:350, delay: 3.3})
+                gsap.from('h1', 1.2, {opacity: 0, y:-150, delay: 4.2})
+                gsap.from('h2', 1.2, {opacity: 0, y:-150, delay: 4.5})
+                const menu = document.querySelector('.menu');
+                const toggle = document.getElementById('toggle');
+                toggle.onclick = function(){
+                menu.classList.toggle('active');
+                }
+            </script>
+    <!--=======================================================-->
+        <!--======END GASP SCRIPT======-->
+    <!--=======================================================-->
+
+</body>
+</html>
