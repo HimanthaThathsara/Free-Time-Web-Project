@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameLoop.lk</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet"/>
+
+        <style>
+      .work-sans {
+        font-family: "Work Sans", sans-serif;
+      }
+
+      #menu-toggle:checked + #menu {
+        display: block;
+      }
+
+      .hover\:grow {
+        transition: all 0.5s;
+        transform: scale(1);
+      }
+
+      .hover\:grow:hover {
+        transform: scale(1.07);
+      }
+
+      .carousel-open:checked + .carousel-item {
+        position: static;
+        opacity: 100;
+      }
+
+      .carousel-item {
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+      }
+
+      #carousel-1:checked ~ .control-1,
+      #carousel-2:checked ~ .control-2,
+      #carousel-3:checked ~ .control-3 {
+        display: block;
+      }
+
+      .carousel-indicators {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 2%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #carousel-1:checked
+        ~ .control-1
+        ~ .carousel-indicators
+        li:nth-child(1)
+        .carousel-bullet,
+      #carousel-2:checked
+        ~ .control-2
+        ~ .carousel-indicators
+        li:nth-child(2)
+        .carousel-bullet,
+      #carousel-3:checked
+        ~ .control-3
+        ~ .carousel-indicators
+        li:nth-child(3)
+        .carousel-bullet {
+        color: #000;
+      }
+    </style>
+
+  </head>
+
+<body class="bg-white text-white work-sans leading-normal text-base tracking-normal">
+
+<!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 py-1">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+        <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+          <svg class="fill-current text-black"  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" >
+            <title>menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </label>
+        <input class="hidden" type="checkbox" id="menu-toggle" />
+
+        <div class="hidden lg:flex lg:items-center md:w-auto w-full order-3 lg:order-1" id="menu" >
+          <nav>
+            <ul class="md:flex items-center justify-between text-base text-black pt-4 md:pt-0" >
+            <li>
+                <a class="inline-block no-underline hover:text-gray-200 hover:underline py-2 pr-4" href="#" >Home</a >
+            </li>
+              <li>
+                <a class="inline-block no-underline hover:text-gray-200 hover:underline py-2 px-4" href="#" >Shop</a >
+              </li>
+              <li>
+                <a class="inline-block no-underline hover:text-gray-200 hover:underline py-2 px-4" href="#" >About</a >
+              </li>
+              <li>
+                <a  class="inline-block no-underline hover:text-gray-200 hover:underline py-2 px-4" href="#" >Contact-us</a >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <a class="flex items-center text-base no-underline hover:no-underline text-black text-xl mr-16" href="#">
+            Logo Image
+          </a>
+        </div>
+
+        <div class="order-2 lg:order-3 flex items-center" id="nav-content">
+          <div class="ml-auto flex items-center">
+            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6" >
+              <a href="#" class="text-sm font-medium text-black hover:text-gray-200" >Sign in</a>
+              <span class="h-6 w-px bg-black"></span>
+              <a href="#" class="text-sm font-medium text-black hover:text-gray-200" >Create account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+<!--End Of Nav-->
+
+<!--Nav slide-->
+    <div class="carousel relative container mx-auto px-6" style="max-width: 1600px">
+      <div class="carousel-inner relative overflow-hidden w-full">
+        <!--Slide 1-->
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked"/>
+        <div class="carousel-item absolute opacity-0 bg-cover bg-gray-400" style="height: 75vh">
+          <div class="block max-h-52 w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-gray-400"
+               style="background-image: url('<!--Image Url-->')" >
+            <div class="container mx-auto">
+              <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"></div>
+            </div>
+          </div>
+        </div>
+        <label for="carousel-3"
+          class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-2"
+          class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto" >›</label >
+
+        <!--Slide 2-->
+        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="" />
+        <div class="carousel-item absolute opacity-0 bg-cover bg-gray-400"
+               style="height: 75vh">
+          <div class="block max-h-52 w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-gray-400"
+               style="background-image: url('<!--Image Url-->')" >
+            <div class="container mx-auto">
+              <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"></div>
+            </div>
+          </div>
+        </div>
+        <label for="carousel-1"
+          class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-3"
+          class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label >
+
+        <!--Slide 3-->
+        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden=""/>
+        <div class="carousel-item absolute opacity-0 bg-cover bg-gray-400" style="height: 75vh">
+          <div class="block max-h-52 w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-gray-400"
+               style="background-image: url('<!--Image Url-->')">
+            <div class="container mx-auto">
+              <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"></div>
+            </div>
+          </div>
+        </div>
+        <label for="carousel-2"
+          class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-1"
+          class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto" >›</label>
+
+        <!-- Add additional indicators for each slide-->
+        <ol class="carousel-indicators">
+          <li class="inline-block mr-3">
+            <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900" >•</label>
+          </li>
+          <li class="inline-block mr-3">
+            <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+          <li class="inline-block mr-3">
+            <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
+          </li>
+        </ol>
+        
+      </div>
+    </div>
+<!--End Of Nav slide-->
+
+<!--Product Offer-->
+    <div class="container mx-auto flex items-center flex-row pt-4 pb-4 md:px-2 lx:px-6 lg:px-0">
+      <div class="w-full mx-0 bg-nordic-gray-light flex pt-12 mr-4 md:pt-0 md:items-center bg-cover bg-gray-400" 
+        style=" max-width: 800px; height: 20rem; background-image: url('<!--Image Url-->');" >
+        <div class="container mx-auto">
+          <div class="flex flex-col w-full lg:w-1/2 justify-center items-start px-6 tracking-wide" >
+            <h1 class="text-black text-2xl my-4">
+                Product Description
+            </h1>
+            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">products</a>
+          </div>
+        </div>
+      </div> 
+
+      <div class="w-full mx-0 bg-nordic-gray-light flex pt-12 md:pt-0 md:items-center bg-cover bg-gray-400" 
+        style=" max-width: 800px; height: 20rem; background-image: url('<!--Image Url-->');">
+        <div class="container mx-auto">
+            <div class="flex flex-col w-full lg:w-1/2 justify-center items-start px-6 tracking-wide">
+            <h1 class="text-black text-2xl my-4">
+                Product Description
+            </h1>
+            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#" >products</a>
+            </div>
+        </div>
+      </div>
+    </div>
+<!--End Of Product Offer -->
+
+<!--Product -->
+    <section class="bg-white">
+      <div class="container mx-auto flex items-center flex-wrap">
+        
+            <nav id="store" class="w-full z-30 top-0 py-1 md:px-6">
+            <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-3" >
+                <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-3xl" href="#">
+                Store
+                </a>
+
+                <div class="flex items-center" id="store-nav-content">
+                <a class="pl-3 inline-block text-black no-underline hover:text-gray-200" href="#">
+                    <svg class="fill-current hover:text-grau-200"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
+                    </svg>
+                </a>
+
+                <a class="pl-3 text-black inline-block no-underline hover:text-gray-200" href="#" >
+                    <svg  class="fill-current hover:text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
+                    </svg>
+                </a>
+                </div>
+            </div>
+            </nav>
+
+                <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                    <div class="pt-3 flex items-center justify-between">
+                    <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                    <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                        <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                    </svg>
+                    </div>
+                    <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                </a>
+                </div>
+
+                  <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                    <a href="#">
+                        <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                        <div class="pt-3 flex items-center justify-between">
+                        <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                            <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                        </svg>
+                        </div>
+                        <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                    </a>
+                    </div>
+
+                      <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                        <a href="#">
+                            <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                            <div class="pt-3 flex items-center justify-between">
+                            <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                            <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                            </svg>
+                            </div>
+                            <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                        </a>
+                        </div>
+
+                        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                          <a href="#">
+                              <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                              <div class="pt-3 flex items-center justify-between">
+                              <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                              <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                  <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                              </svg>
+                              </div>
+                              <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                          </a>
+                          </div>
+
+                          <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                            <a href="#">
+                                <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                                <div class="pt-3 flex items-center justify-between">
+                                <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                                <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                    <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                                </svg>
+                                </div>
+                                <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                            </a>
+                            </div>
+
+                            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                              <a href="#">
+                                  <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                                  <div class="pt-3 flex items-center justify-between">
+                                  <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                                  <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                      <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                                  </svg>
+                                  </div>
+                                  <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                              </a>
+                              </div>
+
+                              <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#">
+                                    <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                                    <div class="pt-3 flex items-center justify-between">
+                                    <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                                    <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                        <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                                    </svg>
+                                    </div>
+                                    <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                                </a>
+                                </div>
+
+                                <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                                  <a href="#">
+                                      <img class="hover:grow hover:shadow-lg rounded-3xl" src="Untitled design.png" />
+                                      <div class="pt-3 flex items-center justify-between">
+                                      <p class="pt-1 text-xl text-gray-900">Product Name</p>
+                                      <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+                                          <path  d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"  />
+                                      </svg>
+                                      </div>
+                                      <p class="pt-1 text-sm text-gray-900">Product Price</p>
+                                  </a>
+                                  </div>
+
+      </div>
+    </section>
+<!--End Of Product -->
+
+<!--Recommended Products-->
+    <section class="bg-white py-4 md:px-6 ">
+      <div class="container mx-auto px-1 py-1 lg:px-1">
+        
+        <nav id="store" class="w-full z-30 top-0 py-1 mb-4">
+          <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-3" >
+              <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-3xl" href="#">
+              Recommended Products
+              </a>
+          </div>
+        </nav>
+
+        <div class="-m-1 flex flex-wrap md:-m-2">
+
+          <div class="flex w-1/2 flex-wrap">
+            <div class="w-1/2 p-1 md:p-2">
+              <img alt="gallery" class="block max-h-52 w-full rounded-3xl object-cover object-center " 
+                   src="Untitled design.png" />
+            </div>
+            <div class="w-1/2 p-1 md:p-2">
+              <img alt="gallery" class="block max-h-52 w-full rounded-3xl object-cover object-center"
+                   src="Untitled design.png" />
+            </div>
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block max-h-80 w-full rounded-3xl object-cover object-center"
+                   src="Untitled design.png" />
+            </div>
+          </div>
+
+          <div class="flex w-1/2 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <img alt="gallery" class="block max-h-80 w-full rounded-3xl object-cover object-center"
+                   src="Untitled design.png" />
+            </div>
+            <div class="w-1/2 p-1 md:p-2">
+              <img alt="gallery" class="block max-h-52 w-full rounded-3xl object-cover object-center"
+                   src="Untitled design.png" />
+            </div>
+            <div class="w-1/2 p-1 md:p-2">
+              <img alt="gallery" class="block max-h-52 w-full rounded-3xl object-cover object-center"
+                   src="Untitled design.png" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+<!--End Of Recommended Products-->
+
+<!--Footer-->
+    <footer class="w-full py-8">
+      <div class="mx-auto max-w-full px-6 sm:px-1 lg:px-6">
+
+        <div class="flex items-center justify-center lg:justify-between flex-col lg:flex-row pb-12 gap-7 lg:gap-0 border-b border-gray-200" >
+          <a href="#" class="flex justify-center lg:justify-start  text-base no-underline hover:no-underline text-black text-5xl" >
+              Logo Image
+          </a>
+          <a href="" class="flex items-center gap-2 py-3.5 px-7 rounded-full bg-gray-400 shadow-md text-white font-semibold hover:bg-gray-800" >Contact us
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg" >
+              <path d="M1.5 6L14.8333 6M10.6667 11L15.0774 6.58926C15.3552 6.31148 15.4941 6.17259 15.4941 6C15.4941 5.82741 15.3552 5.68852 15.0774 5.41074L10.6667 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="flex justify-between flex-col py-8 min-[500px]:py-14 gap-8 min-[500px]:gap-16 lg:gap-0 lg:flex-row  md:items-center justify-center">
+
+          <div class="flex flex-row items-center max-lg:justify-center min-[500px]:items-start min-[500px]:flex-row gap-8 sm:gap-12 xl:gap-24 md:items-center justify-center" >
+            <div class="block">
+              <h4 class="text-lg text-gray-900 font-medium mb-4 min-[500px]:mb-7 text-center min-[500px]:text-left" > Pages </h4>
+              <ul  class="grid gap-4 min-[500px]:gap-6 text-center min-[500px]:text-left" >
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+                </li>
+                <li>
+                  <a  href="#" class="text-gray-600 hover:text-gray-900" >About</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900">Pro</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h4 class="text-lg text-gray-900 font-medium mb-4 min-[500px]:mb-7 text-center min-[500px]:text-left" > Resources
+              </h4>
+              <ul  class="grid gap-4 min-[500px]:gap-6 text-center min-[500px]:text-left" >
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >FAQs</a >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >Start</a >
+                </li>
+                <li>
+                  <a  href="#" class="text-gray-600 hover:text-gray-900" >Document</a >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >User</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h4 class="text-lg text-gray-900 font-medium mb-4 min-[500px]:mb-7 text-center min-[500px]:text-left" >
+                Products
+              </h4>
+              <ul class="grid gap-4 min-[500px]:gap-6 text-center min-[500px]:text-left" >
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >Figma</a >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >Icons </a  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >Respons</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900" >Responsive </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="block lg:max-w-md">
+            <h3 class="font-manrope font-semibold text-2xl text-gray-900 leading-9 mb-3 text-center lg:text-left">
+              Join the newsletter
+            </h3>
+            <div class="lg:bg-gray-100 lg:rounded-full lg:h-16 lg:p-1.5 lg:flex-row gap-6 lg:gap-0 flex-col flex items-center justify-between">
+              <input type="text" name="email" class="py-3 px-6 bg-gray-100 rounded-full text-gray-900 placeholder:text-gray-500 focus:outline-none flex-1 w-full max-w-xl mx-auto lg:w-auto lg:py-5 lg:px-7 lg:bg-transparent" placeholder="Your email here..."/>
+              <button type="submit" class="py-3.5 px-7 bg-gray-400 shadow-md rounded-full text-white font-semibold hover:bg-gray-800">
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+<!--End Of Footer-->
+
+</body>
+
+</html>
