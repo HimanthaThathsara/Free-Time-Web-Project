@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Crads</title>
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--def-transition-duration: .3s;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Open Sans', sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			background-color: #F1EFEC;
+			padding: 5rem 7.5rem;
+			color: #151618;
+		}
+
+		h2,
+		h3,
+		.price {
+			font-family: 'Playfair Display', serif;
+			margin: 0;
+		}
+
+		h2 {
+			color: #151618;
+			font-size: 3.0625rem;
+			font-weight: 700;
+			line-height: 120%; /* 3.675rem */
+			margin: 2rem 0;
+		}
+
+		h3 {
+			font-size: 2.1875rem;
+			font-weight: 400;
+			line-height: 120%; /* 2.625rem */
+		}
+
+		.price {
+			font-variant-numeric: lining-nums proportional-nums;
+			line-height: 120%; /* 1.875rem */
+			font-size: 1.5625rem;
+		}
+
+		header p {
+			font-size: 1.125rem;
+		}
+
+		p.small {
+			color: #E54949;
+			font-size: 0.8125rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		figure,
+		figure p.small {
+			color: #fff;
+		}
+
+		figure h3 + p {
+			font-size: 0.8125rem;
+		}
+
+		figure footer p.small {
+			font-weight: 400;
+			margin-bottom: 0;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+		}
+
+		header {
+			margin-bottom: 7.5rem;
+			max-width: 75%;
+		}
+
+		.gallery {
+			display: grid;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			grid-gap: 2rem;
+			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+			grid-auto-rows: 40rem;
+			grid-auto-flow: dense;
+		}
+
+		figure {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+
+		figcaption {
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			padding: 4rem 2.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			gap: 2rem;
+		}
+
+		figcaption main {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			gap: 2rem;
+		}
+
+		figure p {
+			margin: 0;
+		}
+
+		figure footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		figure footer img {
+			width: auto;
+		}
+
+		figure main,
+		figure footer {
+			opacity: 0;
+		}
+
+		figure:hover main,
+		figure:hover footer {
+			opacity: 1;
+		}
+
+		figcaption {
+			z-index: 1;
+		}
+
+		figcaption::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgba(21, 22, 24, 0.24) 0%, #151618 100%);
+			z-index: -1;
+			opacity: 0;
+			transition-property: opacity;
+		}
+
+		figure:hover figcaption::before {
+			opacity: 1;
+		}
+
+		figure a img {
+			transform: scale(1.2);
+			transition-property: transform;
+		}
+
+		figure:hover a img {
+			transform: scale(1);
+		}
+
+		figure {
+			overflow: hidden;
+		}
+
+		figure main {
+			transform: translate3d(0, -6rem, 0);
+			transition-property: opacity, transform;
+		}
+
+		figure footer {
+			transform: translate3d(0, 6rem, 0);
+			transition-property: opacity, transform;
+		}
+
+		figure footer img {
+			transform: translate3d(-3rem, 0, 0) rotate(360deg);
+			transition-delay: var(--def-transition-duration);
+			opacity: 0;
+		}
+
+		figure:hover main,
+		figure:hover footer {
+			transform: translate3d(0, 0, 0);
+		}
+
+		figure:hover footer img {
+			transform: translate3d(0, 0, 0) rotate(0);
+			opacity: 1;
+		}
+
+		figcaption::before,
+		figure img,
+		figure main,
+		figure footer {
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<section id="page-content">
+
+
+		<ul class="gallery">
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-1.jpg" alt="Great Barrier Reef, Australia"></a>
+					<figcaption>
+						<main>
+							<p class="small">9-day trip</p>
+							<h3>Great Barrier Reef, <em>Australia</em></h3>
+							<p>Dive into the vibrant underwater world of the Great Barrier Reef, a UNESCO World Heritage Site teeming with marine life.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€2,500</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-2.jpg" alt="Gallery image"></a>
+					<figcaption>
+						<main>
+							<p class="small">7-day trip</p>
+							<h3>Grand Canyon, <em>United States</em></h3>
+							<p>Stand in awe at the colossal beauty of the Grand Canyon, carved by the forces of nature over millions of years.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€1,200</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-3.jpg" alt="Gallery image"></a>
+					<figcaption>
+						<main>
+							<p class="small">10-day trip</p>
+							<h3>Machu Picchu, <em>Peru</em></h3>
+							<p>Uncover the mystique of the ancient Inca ruins perched high in the Andes Mountains at Machu Picchu.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€2,200</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-4.jpg" alt="Gallery image"></a>
+					<figcaption>
+						<main>
+							<p class="small">11-day trip</p>
+							<h3>Bali, <em>Indonesia</em></h3>
+							<p>Find tranquility on the idyllic island of Bali, with its lush landscapes, serene temples, and warm hospitality.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€3,200</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-5.jpg" alt="Gallery image"></a>
+					<figcaption>
+						<main>
+							<p class="small">5-day trip</p>
+							<h3>Rio de Janeiro, <em>Brazil</em></h3>
+							<p>Experience the rhythm and energy of Rio de Janeiro, home to vibrant Carnival celebrations, iconic landmarks, and stunning beaches.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€1,600</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+			<li>
+				<figure>
+					<a href="#"><img src="images/gallery-6.jpg" alt="Gallery image"></a>
+					<figcaption>
+						<main>
+							<p class="small">13-day trip</p>
+							<h3>Niagara Falls, <em>Canada</em></h3>
+							<p>Immerse yourself in the breathtaking cascades and embark on unforgettable adventures in this natural wonder.</p>
+						</main>
+
+						<footer>
+							<div>
+								<p class="small">From</p>
+								<p class="price">€3,000</p>
+							</div>
+						</footer>
+					</figcaption>
+				</figure>
+			</li>
+		</ul>
+	</section>
+</body>
+</html>

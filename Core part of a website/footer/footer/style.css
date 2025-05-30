@@ -1,0 +1,141 @@
+body{
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+.footer-section{
+    background-color: #222222;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container-fluid{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.list-icon{
+    display: flex;
+    gap:lrem;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    
+}
+
+.list-item{
+    margin: 40px 20px 15px 15px;
+}
+
+.list-item > a{
+    text-decoration: none;
+    background-color:#ffff;
+    color: #000;
+    padding: 5px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.fa-facebook:hover{
+    background-color:#2e31fd;
+    color: #ffff;
+    transition: all 0.5s;
+    border-radius: 100%;
+}
+
+.fa-snapchat-ghost:hover{
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    transition: all 0.5s;
+    border-radius: 100%;
+}
+
+.fa-twitter:hover{
+    background-color:#55ACEE;
+    color: #ffff;
+    transition: all 0.5s;
+    border-radius: 100%;
+}
+
+.fa-skype:hover {
+    background: #00aff0;
+    color: #ffff;
+    transition: all 0.5s;
+    border-radius: 100%;
+}
+
+.fa-linkedin:hover{
+    background-color:#007bb5;
+    color: #ffff;
+    transition: all 0.5s;
+    border-radius: 100%;
+}
+
+
+.list-text{
+    display: flex;
+    justify-self: space-around;
+    align-items: center;
+    text-align: center;
+    list-style: none;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.list-item-text{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.list-item-text > a{
+    color: rgb(219, 217, 217);
+    text-decoration: none;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+}
+
+.list-item-text>a{
+    background-color:transparent;
+    transition: 0.3s;
+    border-color: transparent;
+    border: 5px;
+}
+
+.list-item-text>a:hover{
+    transition: all 0.75s;
+    color: #fff;
+    border-color: #ffff;
+    border-bottom: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+#text-footer{
+    background-color: #0f0e0e;
+    text-align: center;
+    justify-content: center;
+    color: white;
+
+}
+
+#text-footer a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.75px;
+}
+
+#text-footer a:hover{
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dropdown NavBar</title>
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--def-transition-duration: .2s;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Figtree', sans-serif;
+			line-height: 1.5;
+		}
+
+		img {
+			display: block;
+			height: 50px;
+		}
+
+		#hero {
+			background-color: #151618;
+			height: 100vh;
+			padding-top: 3rem;
+		}
+
+		#main-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.Navbar, .Navbar-button{
+			padding-top: 10px;
+		}
+
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			gap: 3rem;
+		}
+
+		nav ul a {
+			text-decoration: none;
+			color: #A1A2A3;
+			display: inline-block;
+			padding: 1.5rem 0;
+		}
+
+		nav ul a:hover {
+			color: #E8E8E8;
+		}
+
+		.has-submenu {
+			position: relative;
+			display: flex;
+			gap: .5rem;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+		.has-submenu::after {
+			content: url('icons/icon-arrow-down.svg');
+			opacity: .6;
+			height: 25px;
+		}
+
+		.has-submenu:hover ul {
+			display: block;
+		}
+
+		.has-submenu ul {
+			position: absolute;
+			top: 100%;
+			left: -2rem;
+			background-color: #212224;
+			border-radius: .5rem;
+			padding: .5rem;
+			display: none;
+		}
+
+		.has-submenu ul a {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			min-width: 15rem;
+			border-radius: .5rem;
+		}
+
+		.has-submenu ul a::after {
+			content: url(icons/icon-arrow-right.svg);
+			height: 17px;
+			opacity: 0;
+		}
+
+		.has-submenu ul a:hover {
+			background-color: #2C2D2F;
+			padding: 1rem 1.5rem;
+		}
+
+		.has-submenu ul a:hover::after {
+			opacity: 1;
+		}
+
+		.has-submenu:hover::after {
+			opacity: 1;
+		}
+
+		.has-submenu:hover > a {
+			color: #E8E8E8;
+		}
+
+		button {
+			appearance: none;
+			border: 1px solid #9E70EB;
+			color: #9E70EB;
+			background-color: transparent;
+			border-radius: 10rem;
+			padding: .75rem 1.5rem;
+			cursor: pointer;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="hero">
+		<header id="main-header">
+			<a href="/">
+				<img src="imageLogo/logo-test.png" alt="Logo"> <!-- This logo not mine.. -->
+			</a>
+
+			<nav class="Navbar">
+				<ul>
+					<li class="has-submenu">
+						<a href="#">Services</a>
+						<ul>
+							<li><a href="#">Branding</a></li>
+							<li><a href="#">Web Design</a></li>
+							<li><a href="#">Web Development</a></li>
+							<li><a href="#">eCommerce</a></li>
+							<li><a href="#">Print</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Company</a></li>
+					<li class="has-submenu">
+						<a href="#">Blog</a>
+						<ul>
+							<li><a href="#">Tech</a></li>
+							<li><a href="#">New UpDate</a></li>
+							<li><a href="#">Offers</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Careers</a></li>
+					<li class="has-submenu">
+						<a href="#">Contact</a>
+						<ul>
+							<li><a href="#">Email</a></li>
+							<li><a href="#">LinkedIn</a></li>	
+							<li><a href="#">GitHub</a></li>
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Instergaram</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<button class="Navbar-button">LogIn</button>
+		</header>
+	</div>
+</body>
+</html>

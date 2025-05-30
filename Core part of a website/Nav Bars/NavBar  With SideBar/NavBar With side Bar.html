@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navigation Bar</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--color-text: #151618;
+			--color-accent: #E76A10;
+			--color-bg: white;
+		}
+
+		html {
+			font-size: 16px;
+			font-family: 'Lato', sans-serif;
+			line-height: 1.5;
+		}
+
+		body {
+			color: var(--color-text);
+			background-color: var(--color-bg);
+		}
+
+		h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 4rem;
+			line-height: 1.2;
+		}
+
+		p {
+			font-size: 1.125rem;
+			line-height: 1.4;
+		}
+
+		a {
+			text-decoration: none;
+			color: var(--color-text);
+			font-size: .875rem;
+			transition: color .5s ease-in-out;
+		}
+
+		img {
+			display: block;
+			height: 50px;
+		}
+
+		a:hover {
+			color: var(--color-accent);
+		}
+
+		header {
+			margin: 3rem 4rem 10rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			z-index: 100;
+			position: relative;
+		}
+
+		.header-side-content {
+			flex: 1;
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		.header-side-content:last-child {
+			justify-content: flex-end;
+		}
+
+		.button {
+			appearance: none;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		.button.primary {
+			background-color: var(--color-accent);
+			color: white;
+			font-size: 1.125rem;
+			padding: 1rem 2rem;
+			border-radius: .25rem;
+			transition: background-color .2s ease-in-out;
+		}
+
+		.button.primary:hover {
+			background-color: var(--color-text);
+		}
+
+		#menu-button svg {
+			fill: var(--color-text);
+			transition: .5s ease-in-out;
+		}
+
+		ul.unstyled {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		#nav-social ul {
+			display: flex;
+			gap: 1.5rem;
+			align-items: center;
+		}
+
+		#nav-social li {
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+
+		#nav-social li:not(:last-child)::after {
+			content: '';
+			display: inline-block;
+			height: 1px;
+			width: .5rem;
+			background-color: var(--color-text);
+			margin-left: 1.5rem;
+			transition: background-color .5s ease-in-out;
+		}
+
+		.container {
+			margin: 0 4rem;
+		}
+
+		#hero {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10rem;
+		}
+
+		#hero-content {
+			margin-left: 4rem;
+		}
+
+		#hero h1,
+		#hero p {
+			max-width: 32vw;
+			margin: 0 0 3rem;
+		}
+
+		#menu-container {
+			position: absolute;
+			inset: 0;
+			background-color: var(--color-text);
+			text-align: center;
+			display: grid;
+			place-content: center;
+			z-index: 99;
+			height: 0;
+			transition: height .5s cubic-bezier(.14,.65,.15,1);
+		}
+
+		#menu-container a {
+			display: inline-block;
+			font-size: 2.25rem;
+			line-height: 1.4;
+			margin-bottom: 2rem;
+			transition: color .5s ease-in-out;
+			color: var(--color-bg);
+		}
+
+		#menu-container a:hover {
+			color: var(--color-accent);
+		}
+
+		#menu-container li {
+			opacity: 0;
+			transition: opacity .2s ease-in-out;
+		}
+
+		:root[menu-open] #menu-container {
+			height: 100%;
+		}
+
+		:root[menu-open] #menu-container li {
+			opacity: 1;
+		}
+
+		:root[menu-open] #nav-social a {
+			color: var(--color-bg);
+		}
+
+		:root[menu-open] #nav-social li::after  {
+			background-color: var(--color-bg);
+		}
+
+		#menu-button {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 3.5px;
+			width: 2.5rem;
+			height: 2.5rem;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#menu-button span {
+			width: 25px;
+			height: 2.5px;
+			border-radius: 2px;
+			background-color: var(--color-text);
+			transition: transform .3s ease-in-out, opacity .3s ease-in-out, background-color .5s ease-in-out;
+			transform-origin: center;
+		}
+
+		:root[menu-open] #menu-button span:nth-child(1) {
+			transform: translate3d(0, 6px, 0) rotate(45deg);
+		}
+
+		:root[menu-open] #menu-button span:nth-child(2) {
+			transform: scaleX(0);
+			opacity: 0;
+		}
+
+		:root[menu-open] #menu-button span:nth-child(3) {
+			transform: translate3d(0, -6px, 0) rotate(-45deg);
+		}
+
+		:root[menu-open] #menu-button span {
+			background-color: var(--color-bg);
+		}
+
+	</style>
+
+</head>
+<body>
+	<header>
+		<div class="header-side-content">
+			<button class="button" id="menu-button">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+
+		<a href="/">
+			<img src="imageLogo/logo-test.png" alt="Logo"> <!--This Flcon logo is just a test logo it not mine.-->
+		</a>
+
+		<div class="header-side-content">
+			<nav id="nav-social">
+				<ul class="unstyled">
+					<li><a href="">YouTube</a></li>
+					<li><a href="">Facebook</a></li>
+					<li><a href="">Instagram</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="menu-container">
+		<ul class="unstyled">
+			<li><a href="">Home</a></li>
+			<li><a href="">About us</a></li>
+			<li><a href="">Web sites</a></li>
+			<li><a href="">All Projects</a></li>
+			<li><a href="">Contact Us</a></li>
+		</ul>
+	</div>
+
+
+	<script>
+		const menuButton = document.querySelector('#menu-button')
+		const rootElement = document.documentElement
+
+		menuButton.addEventListener('click', () => {
+			rootElement.toggleAttribute('menu-open')
+		})
+
+	</script>
+</body>
+</html>

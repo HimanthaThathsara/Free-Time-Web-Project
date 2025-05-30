@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar exampel</title>
+    <link href="Design.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+      
+        <a href="#" class="logo">Geniapes</a>
+        <ul>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">License</a></li>
+          <li><a href="#">Upload</a></li>
+          <li><a href="#">Download</a></li>
+          <li><a href="#">Join</a></li>
+        </ul>
+  </header>  
+  <section class = "banner"></section>
+  <script type="text/javascript">
+      window:addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          header.classList.toggle("sticky",window.scrollY > 0);
+      })
+  </script>
+</body>
+</html>

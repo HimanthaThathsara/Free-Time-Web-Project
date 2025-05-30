@@ -1,0 +1,23 @@
+body{
+  background-image: url("bg\ image.jpeg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nav-item{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  font-style: normal;
+}
+.list-item{
+  color: white;
+  text-decoration: none ;
+}
+.list-item:hover{
+  transform: scale(1.2);
+  letter-spacing: 1px;
+  color: white;
+}
+
+header{
+  padding-bottom: 5px;
+}
