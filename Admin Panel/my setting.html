@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icons8-microsoft-admin-30.png" type="image/x-icon">
+    <title>Settings</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>     
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="top-container">
+
+        <div class="nav buttom-line">
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2VzyuEQRzGh2zrIrk68BdwdCJJSi0X5U9wc7O1bvLjTlL+BXLl5qbk5OTox4GslfaIiI8mj9r0tr7v7Ggu+9RcZp7v85n37TszzrWVWsAgUAIqwC5wBFwAN0AdeNOoa86vHcpbUe1AHuAscE88+aySBXyXI7QA9OnvDGvTi8AWcAzU5Lu1gM0yZHVbvS4yuJgKXEgF7koF7kwF7sgDfv2Hrn62gGsRwf2yVi3g04jgSVlPLOAdmdcNXqu2LeAZmS8jgqedsSEeVTAaAex7pvgnWIFrKjrzR6JF8IoJqsDehu5eaAFcBXrMYIXOqfgFGAkEz+eCZnT4AzCUsd5Mmy5UfN+1Bwp6AsaM4D1fGwxueFN/4O/Asn91tJalfXMXGy/7DeBT4efA1C/gB7Da7BQEC5gArjO+8goYD082SBdMWTA/lvycpbYtl0JfmNEFAAxYCEgAAAAASUVORK5CYII=" alt="microsoft-admin--v1">
+                <!-- <i class=''></i> --> <!--use svg if you want it set up-->
+                <a href="index.html"><span>ABC</span>Cinema</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="Movies.html">Movies</a>
+                <a href="Resevation.html">Resevetion</a>
+                <!-- <a href="#">Accounts</a> -->
+                <a href="Setting.html">Settings</a>
+            </div>  
+
+            <div class="right-section">
+                <i class='bx bx-bell'></i> <!--TODO: Send The Notifiction For Every CURD Operation And Save it TO the data Base-->
+                <i class='bx bx-search'></i> <!--TODO: Click the Serch and show the serch Bar, Get the Input From  Search Bar and Send it to the data base and get the Output -->
+                <div class="profile">
+                    <div class="info"> 
+                        <img src="assets/profile.png">
+                        <div>
+                            <a href="Setting.html">Admin</a>
+                            <p>Admin Name</p>
+                        </div>
+                        <!--TODO: Admin & Name Base on the Registation Get the Input From Data Base-->
+                    </div>
+                    <i class='bx bx-chevron-down' id="AdminSection"></i> <!--TODO: Admin Drop down menu and link it to the relevent page-->
+                    <div class="dropdown-menu" id="dropdown-menu2">
+                        <ul>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z"></path>
+                                    </svg>My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">\
+                                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                                    </svg>My Contacts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="m2.344 15.271 2 3.46a1 1 0 0 0 1.366.365l1.396-.806c.58.457 1.221.832 1.895 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.598a8.094 8.094 0 0 0 1.895-1.112l1.396.806c.477.275 1.091.11 1.366-.365l2-3.46a1.004 1.004 0 0 0-.365-1.366l-1.372-.793a7.683 7.683 0 0 0-.002-2.224l1.372-.793c.476-.275.641-.89.365-1.366l-2-3.46a1 1 0 0 0-1.366-.365l-1.396.806A8.034 8.034 0 0 0 15 4.598V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.598A8.094 8.094 0 0 0 7.105 5.71L5.71 4.904a.999.999 0 0 0-1.366.365l-2 3.46a1.004 1.004 0 0 0 .365 1.366l1.372.793a7.683 7.683 0 0 0 0 2.224l-1.372.793c-.476.275-.641.89-.365 1.366zM12 8c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z"></path>
+                                    </svg>Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path>
+                                    </svg>Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status Prog-Movie-list">
+
+            <div class="details">
+                <div class="item">
+                    <h2>Setting</h2>
+                    <p>Casting Times And The Moive Ticket Price</p>
+                </div>                
+            </div>
+
+
+            <!-- <div class="bg-white shadow-lg rounded-lg max-w-4xl w-full"></div> -->
+            <div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                    <div class="md:col-span-2">
+                        <h2 class="text-xl font-semibold mb-4">Personal Information</h2>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                            <div class="flex items-center border rounded-lg px-4 py-3 bg-gray-50">
+                                                <svg class="w-5 h-5 text-gray-400 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A3 3 0 017 16h10a3 3 0 011.879.804M12 12a5 5 0 100-10 5 5 0 000 10z" />
+                                                </svg>
+                                                <input type="text" placeholder="Himantha Thathsara" class="bg-transparent w-full outline-none">
+                                            </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                            <div class="flex items-center border rounded-lg px-4 py-3 bg-gray-50">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 mr-2" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 0.288);">
+                                                    <path d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z"></path>
+                                                </svg>
+                                                <input type="text" placeholder="+94 112-24-4077" class="bg-transparent w-full outline-none">
+                                            </div>
+                                    </div>
+
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                        <div class="flex items-center border rounded-lg px-4 py-3 bg-gray-50">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 mr-2" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 0.288);">
+                                                <path d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"></path>
+                                            </svg>
+                                            <input type="email" placeholder="examplemail@gmail.com" class="bg-transparent w-full outline-none">
+                                        </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Username</label>
+                                    <input type="text" placeholder="Himantha" class="w-full px-4 py-3 border rounded-lg bg-gray-50 outline-none">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">BIO</label>
+                                    <textarea rows="4" placeholder="Description about Your Self..." class="w-full px-4 py-3 border rounded-lg bg-gray-50 outline-none"></textarea>
+                                </div>
+                            </form>
+                    </div>
+
+                
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4">Your Photo</h2>
+                            <div class="bg-gray-50 border rounded-lg p-6 text-center">
+                                <img src="assets/profile.png" alt="Profile" class="w-20 h-20 rounded-full mx-auto mb-4">
+                                    <p class="text-gray-700 mb-2 font-medium">Edit your photo</p>
+
+                                <div class="flex justify-center text-sm space-x-4 mb-4">
+                                    <button href="#" class="text-indigo-600 hover:text-gray-600 hover:underline  Button-Edit ">Update<i class='bx bx-edit'></i> </button>
+                                </div>
+
+                                <div class="border-dashed border-2 border-blue-400 rounded-lg py-12">
+                                    <p class="text-blue-500">Click to upload</p>
+                                    <p class="text-gray-500 text-sm mt-1">or drag and drop</p>
+                                    <p class="text-gray-400 text-xs mt-1">SVG, PNG, JPG or GIF (max. 800x800px)</p>
+                                </div>
+
+                                <div class="flex justify-end mt-6">
+                                    <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300">Cancel</button>
+                                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 ml-4">Save</button>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div> 
+
+    </div>
+
+</body>
+
+<script>
+            let OpenOrNot = false;
+        dropdownMenu2 =document.getElementById('dropdown-menu2');
+        AdminSection = document.getElementById('AdminSection');
+        AdminSection.addEventListener('click', () => {
+            if(!OpenOrNot){
+                dropdownMenu2.style.visibility = 'visible';
+                OpenOrNot = true;
+            }
+            else{
+                dropdownMenu2.style.visibility = 'hidden';
+                OpenOrNot = false;
+            }
+            
+        });
+
+</script>
+
+</html>
