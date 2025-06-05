@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icons8-microsoft-admin-30.png" type="image/x-icon">
+    <title>Profile</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>     
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="top-container">
+
+        <div class="nav buttom-line">
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2VzyuEQRzGh2zrIrk68BdwdCJJSi0X5U9wc7O1bvLjTlL+BXLl5qbk5OTox4GslfaIiI8mj9r0tr7v7Ggu+9RcZp7v85n37TszzrWVWsAgUAIqwC5wBFwAN0AdeNOoa86vHcpbUe1AHuAscE88+aySBXyXI7QA9OnvDGvTi8AWcAzU5Lu1gM0yZHVbvS4yuJgKXEgF7koF7kwF7sgDfv2Hrn62gGsRwf2yVi3g04jgSVlPLOAdmdcNXqu2LeAZmS8jgqedsSEeVTAaAex7pvgnWIFrKjrzR6JF8IoJqsDehu5eaAFcBXrMYIXOqfgFGAkEz+eCZnT4AzCUsd5Mmy5UfN+1Bwp6AsaM4D1fGwxueFN/4O/Asn91tJalfXMXGy/7DeBT4efA1C/gB7Da7BQEC5gArjO+8goYD082SBdMWTA/lvycpbYtl0JfmNEFAAxYCEgAAAAASUVORK5CYII=" alt="microsoft-admin--v1">
+                <!-- <i class=''></i> --> <!--use svg if you want it set up-->
+                <a href="index.html"><span>ABC</span>Cinema</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="Movies.html">Movies</a>
+                <a href="Resevation.html">Resevetion</a>
+                <!-- <a href="#">Accounts</a> -->
+                <a href="Setting.html">Settings</a>
+            </div>  
+
+            <div class="right-section">
+                <i class='bx bx-bell'></i> <!--TODO: Send The Notifiction For Every CURD Operation And Save it TO the data Base-->
+                <i class='bx bx-search'></i> <!--TODO: Click the Serch and show the serch Bar, Get the Input From  Search Bar and Send it to the data base and get the Output -->
+                <div class="profile">
+                    <div class="info"> 
+                        <img src="assets/profile.png">
+                        <div>
+                            <a href="Setting.html">Admin</a>
+                            <p>Admin Name</p>
+                        </div>
+                        <!--TODO: Admin & Name Base on the Registation Get the Input From Data Base-->
+                    </div>
+                    <i class='bx bx-chevron-down' id="AdminSection"></i> <!--TODO: Admin Drop down menu and link it to the relevent page-->
+                    <div class="dropdown-menu" id="dropdown-menu2">
+                        <ul>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z"></path>
+                                    </svg>My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">\
+                                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                                    </svg>My Contacts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="m2.344 15.271 2 3.46a1 1 0 0 0 1.366.365l1.396-.806c.58.457 1.221.832 1.895 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.598a8.094 8.094 0 0 0 1.895-1.112l1.396.806c.477.275 1.091.11 1.366-.365l2-3.46a1.004 1.004 0 0 0-.365-1.366l-1.372-.793a7.683 7.683 0 0 0-.002-2.224l1.372-.793c.476-.275.641-.89.365-1.366l-2-3.46a1 1 0 0 0-1.366-.365l-1.396.806A8.034 8.034 0 0 0 15 4.598V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.598A8.094 8.094 0 0 0 7.105 5.71L5.71 4.904a.999.999 0 0 0-1.366.365l-2 3.46a1.004 1.004 0 0 0 .365 1.366l1.372.793a7.683 7.683 0 0 0 0 2.224l-1.372.793c-.476.275-.641.89-.365 1.366zM12 8c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z"></path>
+                                    </svg>Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path>
+                                    </svg>Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status Prog-Movie-list">
+
+            <div class="details">
+                <div class="item">
+                    <h2>Casting Times</h2>
+                    <p>Casting Times And The Moive Ticket Price</p>
+                </div>
+                <!-- <div class="separator"></div>
+                <div class="item">
+                    <h2>RS 30,852</h2>
+                    <p>Today Revenue</p>
+                </div> -->
+            </div>
+
+            <!-- <div class="bg-white shadow-lg rounded-lg max-w-4xl w-full"></div> -->
+            <div class="relative">
+                <img src="assets/black-1072366_640.jpg" alt="Background" class="w-full h-48 object-cover rounded-t-lg">
+
+                    <div class="absolute top-4 right-4">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-500 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="w-5 h-5 mr-1"  viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                    <path d="M12 8c-2.168 0-4 1.832-4 4s1.832 4 4 4 4-1.832 4-4-1.832-4-4-4zm0 6c-1.065 0-2-.935-2-2s.935-2 2-2 2 .935 2 2-.935 2-2 2z"></path>
+                                    <path d="M20 5h-2.586l-2.707-2.707A.996.996 0 0 0 14 2h-4a.996.996 0 0 0-.707.293L6.586 5H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zM4 18V7h3c.266 0 .52-.105.707-.293L10.414 4h3.172l2.707 2.707A.996.996 0 0 0 17 7h3l.002 11H4z"></path>
+                                </svg>
+                                Edit
+                            </button>
+                    </div>
+
+                    <div class="absolute left-1/2 transform -translate-x-1/2 -bottom-14">
+                        <img src="assets/profile.png" alt="Profile" class="w-28 h-28 rounded-full border-4 border-white shadow-md object-cover">
+                            <div class="absolute bottom-0 right-0 bg-blue-600 p-1.5 rounded-full text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                    </div>
+
+            </div>
+
+
+            <div class="text-center mt-16 p-4">
+                <h1 class="text-2xl font-bold text-gray-800">Admin Name</h1>
+                    <p class="text-gray-600 text-sm">Admin</p>
+
+                <!-- <div class="flex justify-center space-x-8 mt-4">
+                    <div class="text-center border-r-2 pr-6 pl-6">
+                    <p class="text-gray-800 font-bold text-lg">259</p>
+                    <p class="text-gray-500 text-sm">Posts</p>
+                    </div>
+                    <div class="text-center border-r-2 pr-6">
+                    <p class="text-gray-800 font-bold text-lg">129K</p>
+                    <p class="text-gray-500 text-sm">Followers</p>
+                    </div>
+                    <div class="text-center">
+                    <p class="text-gray-800 font-bold text-lg">2K</p>
+                    <p class="text-gray-500 text-sm">Following</p>
+                    </div>
+                </div> -->
+
+                <div class="mt-6 px-6">
+                    <h2 class="text-gray-800 text-lg font-semibold mb-2">About Me</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed px-10">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere fermentum urna, eu condimentum mauris tempus ut. Donec fermentum blandit aliquet. Sed vel aliquet libero. Nunc a augue fermentum, pharetra ligula sed, dictum lacus.
+                    </p>
+                </div>
+
+                <div class="mt-6 px-6">
+                    <h2 class="text-gray-800 text-lg font-semibold text-sm mb-3">Report Bugs</h2>
+                    <ul class="flex justify-center space-x-4">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                                <path d="M11 7h2v7h-2zm0 8h2v2h-2z"></path>
+                                <path d="m21.707 7.293-5-5A.996.996 0 0 0 16 2H8a.996.996 0 0 0-.707.293l-5 5A.996.996 0 0 0 2 8v8c0 .266.105.52.293.707l5 5A.996.996 0 0 0 8 22h8c.266 0 .52-.105.707-.293l5-5A.996.996 0 0 0 22 16V8a.996.996 0 0 0-.293-.707zM20 15.586 15.586 20H8.414L4 15.586V8.414L8.414 4h7.172L20 8.414v7.172z"></path>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                                <path d="M20 4H6c-1.103 0-2 .897-2 2v5h2V8l6.4 4.8a1.001 1.001 0 0 0 1.2 0L20 8v9h-8v2h8c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm-7 6.75L6.666 6h12.668L13 10.75z"></path>
+                                <path d="M2 12h7v2H2zm2 3h6v2H4zm3 3h4v2H7z"></path>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);">
+                                <path d="M16.57 22a2 2 0 0 0 1.43-.59l2.71-2.71a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0l-1.6 1.59a7.55 7.55 0 0 1-3-1.59 7.62 7.62 0 0 1-1.59-3l1.59-1.6a1 1 0 0 0 0-1.41l-4-4a1 1 0 0 0-1.41 0L2.59 6A2 2 0 0 0 2 7.43 15.28 15.28 0 0 0 6.3 17.7 15.28 15.28 0 0 0 16.57 22zM6 5.41 8.59 8 7.3 9.29a1 1 0 0 0-.3.91 10.12 10.12 0 0 0 2.3 4.5 10.08 10.08 0 0 0 4.5 2.3 1 1 0 0 0 .91-.27L16 15.41 18.59 18l-2 2a13.28 13.28 0 0 1-8.87-3.71A13.28 13.28 0 0 1 4 7.41zM20 11h2a8.81 8.81 0 0 0-9-9v2a6.77 6.77 0 0 1 7 7z"></path>
+                                <path d="M13 8c2.1 0 3 .9 3 3h2c0-3.22-1.78-5-5-5z"></path>
+                            </svg>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+            
+
+    </div>
+
+</body>
+
+<script>
+            let OpenOrNot = false;
+        dropdownMenu2 =document.getElementById('dropdown-menu2');
+        AdminSection = document.getElementById('AdminSection');
+        AdminSection.addEventListener('click', () => {
+            if(!OpenOrNot){
+                dropdownMenu2.style.visibility = 'visible';
+                OpenOrNot = true;
+            }
+            else{
+                dropdownMenu2.style.visibility = 'hidden';
+                OpenOrNot = false;
+            }
+            
+        });
+
+</script>
+
+</html>
