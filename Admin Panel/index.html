@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icons8-microsoft-admin-30.png" type="image/x-icon">
+    <title>ABC Cinema Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="top-container">
+
+        <div class="nav">
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2VzyuEQRzGh2zrIrk68BdwdCJJSi0X5U9wc7O1bvLjTlL+BXLl5qbk5OTox4GslfaIiI8mj9r0tr7v7Ggu+9RcZp7v85n37TszzrWVWsAgUAIqwC5wBFwAN0AdeNOoa86vHcpbUe1AHuAscE88+aySBXyXI7QA9OnvDGvTi8AWcAzU5Lu1gM0yZHVbvS4yuJgKXEgF7koF7kwF7sgDfv2Hrn62gGsRwf2yVi3g04jgSVlPLOAdmdcNXqu2LeAZmS8jgqedsSEeVTAaAex7pvgnWIFrKjrzR6JF8IoJqsDehu5eaAFcBXrMYIXOqfgFGAkEz+eCZnT4AzCUsd5Mmy5UfN+1Bwp6AsaM4D1fGwxueFN/4O/Asn91tJalfXMXGy/7DeBT4efA1C/gB7Da7BQEC5gArjO+8goYD082SBdMWTA/lvycpbYtl0JfmNEFAAxYCEgAAAAASUVORK5CYII=" alt="microsoft-admin--v1">
+                <!-- <i class=''></i> --> <!--use svg if you want it set up-->
+                <a href="index.html"><span>ABC</span>Cinema</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="Movies.html">Movies</a>
+                <a href="Resevation.html">Resevetion</a>
+                <!-- <a href="#">Accounts</a> -->
+                <a href="Setting.html">Settings</a>
+            </div>  
+
+            <div class="right-section">
+                <i class='bx bx-bell'></i> <!--TODO: Send The Notifiction For Every CURD Operation And Save it TO the data Base-->
+                <i class='bx bx-search'></i> <!--TODO: Click the Serch and show the serch Bar, Get the Input From  Search Bar and Send it to the data base and get the Output -->
+                <div class="profile">
+                    <div class="info"> 
+                        <img src="assets/profile.png">
+                        <div>
+                            <a href="Setting.html">Admin</a>
+                            <p>Admin Name</p>
+                        </div>
+                        <!--TODO: Admin & Name Base on the Registation Get the Input From Data Base-->
+                    </div>
+                    <i class='bx bx-chevron-down' id="AdminSection"></i> <!--TODO: Admin Drop down menu and link it to the relevent page-->
+                    <div class="dropdown-menu" id="dropdown-menu2">
+                        <ul>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z"></path>
+                                    </svg>My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">\
+                                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                                    </svg>My Contacts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="m2.344 15.271 2 3.46a1 1 0 0 0 1.366.365l1.396-.806c.58.457 1.221.832 1.895 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.598a8.094 8.094 0 0 0 1.895-1.112l1.396.806c.477.275 1.091.11 1.366-.365l2-3.46a1.004 1.004 0 0 0-.365-1.366l-1.372-.793a7.683 7.683 0 0 0-.002-2.224l1.372-.793c.476-.275.641-.89.365-1.366l-2-3.46a1 1 0 0 0-1.366-.365l-1.396.806A8.034 8.034 0 0 0 15 4.598V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.598A8.094 8.094 0 0 0 7.105 5.71L5.71 4.904a.999.999 0 0 0-1.366.365l-2 3.46a1.004 1.004 0 0 0 .365 1.366l1.372.793a7.683 7.683 0 0 0 0 2.224l-1.372.793c-.476.275-.641.89-.365 1.366zM12 8c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z"></path>
+                                    </svg>Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path>
+                                    </svg>Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="status">
+
+            <div class="header">
+                <h4 id="big">Casting Movies</h4>
+            </div>
+
+            <div class="items-list">
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 8 Seat left</p>
+                            <p>- 92 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 35 Seat left</p>
+                            <p>- 65 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 20 Seat left</p>
+                            <p>- 80 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 8 Seat left</p>
+                            <p>- 92 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>  <!--TODO: Get the Input From Data Base and Fill The Output-->
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status">
+
+            <div class="header">
+                <h4>Revenue Progress </h4>
+                <div class="tabs">
+                    <button class="active" id="prog-chart-3M">3M</button>
+                    <button id="prog-chart-6M">6M</button>
+                    <button id="prog-chart-12M">12M</button>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="item">
+                    <h2>RS 170,852</h2>
+                    <p>Monthly Revenue</p>
+                </div>
+                <div class="separator"></div>
+                <div class="item">
+                    <h2>RS 30,852</h2>
+                    <p>Today Revenue</p>
+                </div>
+            </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+            <canvas class="prog-chart-3" id="prog-chart"></canvas> <!--TODO: Get the Input From Data Base and Create the chart sending data to the js file-->
+
+        </div>
+
+        <div class="upcoming">
+
+            <div class="header">
+                <h4>Casting Times</h4>
+                <div class="tabs" id="header-time"> 
+                    <span id="active-tab-Time">Nov 18</span> <i class='bx bx-chevron-down'></i> 
+                    <div class="dropdown-menu" id="dropdown-menu-Time">
+                        <a href="#" data-value="Morning">Morning</a>
+                        <a href="#" data-value="Afternoon">Afternoon</a>
+                        <a href="#" data-value="Night">Night</a>
+                    </div> <!--'TODO: Divide the list base on the time'-->
+                </div>
+            </div>
+
+
+            <div class="events">
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <!-- <i class='bx bx-time'></i> -->  <!--The Svg is Ready to go-->
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>07:00-9:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <!-- <i class='bx bx-time'></i> -->  <!--The Svg is Ready to go-->
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>10:00-12:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <!-- <i class='bx bx-time'></i> -->  <!--The Svg is Ready to go-->
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>13:30-15:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>15:30-17:00</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>17:30-19:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>20:00-22:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venom The Last Dance</a>
+                            <p>22:00-24:30</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+            </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+        </div>
+
+        <div class="prog-status activity-chart-div">
+                <div class="header">
+                    <h4>Film Revenue</h4>
+                    <div class="tabs" id="tabs">
+                        <span id="active-tab"> Venom </span> <i class='bx bx-chevron-down'></i> 
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <a href="#" data-value="Venom1">Venom</a>
+                            <a href="#" data-value="Venom2">Venom</a>
+                            <a href="#" data-value="Venom3">Venom</a>
+                        </div>
+                    </div>
+                </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+                <div class="details">
+                    <div class="item">
+                        <h2>RS 20,000</h2>
+                        <p>Week Revenue</p>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="item">
+                        <h2>RS 2,568</h2>
+                        <p>Today Revenue</p>
+                    </div>
+                </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+                <canvas class="activity-chart"></canvas>
+        </div>
+
+        <div class="popular">
+            <div class="header">
+                <h4>Popular</h4>
+                <a href="#"># Movie</a>
+            </div>
+
+            <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ">
+
+            <div class="audio">
+                <img width="50" height="50" src="https://img.icons8.com/carbon-copy/50/ticket.png" alt="ticket"/>
+                <!-- <i class='bx bx-ticket'></i> -->
+                <a href="Movies.html">Ticket Price : RS 500</a>
+            </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+            
+            <div class="audio">
+                <img width="50" height="50" src="https://img.icons8.com/carbon-copy/50/ticket.png" alt="ticket"/>
+                <!-- <i class='bx bx-ticket'></i> -->
+                <a href="Movies.html">VIP Ticket Price : RS 1000</a>
+            </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur possimus nemo iusto in ratione dignissimos expedita nisi. Non numquam impedit unde nulla eius. Vero, debitis ea! Necessitatibus labore qui harum?</p>
+
+            <div class="listen">
+                <a href="Movies.html">
+                    <button>
+                        View<i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="upcoming">
+
+            <div class="header">
+                <h4>Up Comming Events</h4>
+                <a href="#" id="upcomingDate">Nov<i class='bx bx-chevron-down'></i></a>
+            </div>
+
+            <div class="dates" id="weekContainer">
+                <!-- <div class="item">
+                    <h5>Mo</h5>
+                    <a href="#">12</a>
+                </div>
+                <div class="item active">
+                    <h5>Tu</h5>
+                    <a href="#">13</a>
+                </div>
+                <div class="item">
+                    <h5>We</h5>
+                    <a href="#">14</a>
+                </div>
+                <div class="item">
+                    <h5>Th</h5>
+                    <a href="#">15</a>
+                </div>
+                <div class="item">
+                    <h5>Fr</h5>
+                    <a href="#">16</a>
+                </div>
+                <div class="item">
+                    <h5>Sa</h5>
+                    <a href="#">17</a>
+                </div>
+                <div class="item">
+                    <h5>Su</h5>
+                    <a href="#">18</a>
+                </div> -->
+            </div>
+
+            <div class="events">
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venome The Last Dance</a>
+                            <p>RS 500</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venome The Last Dance</a>
+                            <p>RS 500</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venome The Last Dance</a>
+                            <p>RS 500</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venome The Last Dance</a>
+                            <p>RS 500</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                        <div class="event-info">
+                            <a href="Movies.html">Venome The Last Dance</a>
+                            <p>RS 500</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+            </div><!--TODO: Get the Input From Data Base and Fill The Output-->
+
+        </div>
+
+
+    </div>
+
+    <script>
+    const tabs = document.getElementById('tabs');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const activeTab = document.getElementById('active-tab');
+
+    const HeaderTime = document.getElementById('header-time');
+    const HeaderdropdownMenu = document.getElementById('dropdown-menu-Time');
+    const activeTabTime = document.getElementById('active-tab-Time');
+
+    const progChart3M = document.getElementById('prog-chart-3M');
+    const progChart6M = document.getElementById('prog-chart-6M');
+    const progChart12M = document.getElementById('prog-chart-12M');
+    const CanvaprogChart = document.getElementById('prog-chart');
+    const progstatus = document.querySelector('.prog-status');
+
+    const UpcomingDate = document.getElementById('upcomingDate');
+    const WeekCalander = document.querySelector('dates')
+
+
+    progChart3M.addEventListener('click', ()=> {
+        progChartFuction('prog-chart-3');
+    });
+    progChart6M.addEventListener('click', ()=> {
+        progChartFuction('prog-chart-6');
+    });
+    progChart12M.addEventListener('click', ()=> {
+        progChartFuction('prog-chart-12');
+    });
+
+
+    function progChartFuction(x) {
+        if (x == "prog-chart-3"){
+            progChart3M.classList.add('active');
+            progChart6M.classList.remove('active');
+            progChart12M.classList.remove('active');
+
+            CanvaprogChart.classList.remove('prog-chart-6','prog-chart-12');
+            CanvaprogChart.classList.add(x);
+            console.log(x);
+        }
+        else if (x == "prog-chart-6"){
+            progChart6M.classList.add('active');
+            progChart3M.classList.remove('active');
+            progChart12M.classList.remove('active');
+
+            CanvaprogChart.classList.remove('prog-chart-3','prog-chart-12');
+            CanvaprogChart.classList.add(x);
+            console.log(x);
+        }
+        else if (x == "prog-chart-12"){
+            progChart12M.classList.add('active');
+            progChart6M.classList.remove('active');
+            progChart3M.classList.remove('active');
+
+            CanvaprogChart.classList.remove('prog-chart-3','prog-chart-6');
+            CanvaprogChart.classList.add(x);
+            console.log(x);
+        }
+        else{
+            console.log('error');
+        }
+
+    }
+    
+    HeaderTime.addEventListener('click', (e) => {
+        e.stopPropagation();
+        HeaderTime.classList.toggle('open');
+    });
+
+    HeaderdropdownMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            e.preventDefault();
+            const value = e.target.getAttribute('data-value');
+            activeTabTime.textContent = value; 
+            console.log(`Selected: ${value}`); 
+            HeaderTime.classList.remove('open'); 
+        }
+    });
+
+
+    document.addEventListener('click', () => {
+        HeaderTime.classList.remove('open');
+    });
+
+    
+    tabs.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tabs.classList.toggle('open');
+    });
+
+    
+    dropdownMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            e.preventDefault();
+            const value = e.target.getAttribute('data-value');
+            activeTab.textContent = value;
+            console.log(`Selected: ${value}`);
+            tabs.classList.remove('open'); 
+        }
+    });
+
+
+    document.addEventListener('click', () => {
+        tabs.classList.remove('open');
+        HeaderTime.classList.remove('open');
+    });
+
+    const date = new Date();
+    // const formattedDate = `${date.toLocaleDateString()}`;
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const formattedMonth = months[date.getMonth()];
+    const formattedDateAndMonth = `${formattedMonth} ${date.getDate()} `;
+
+    const utcMonth = date.getUTCMonth();
+    const utcDay = date.getUTCDate(); 
+
+    activeTabTime.innerHTML = formattedDateAndMonth;
+    UpcomingDate.innerHTML = formattedMonth;
+
+
+    function generateWeekCalendar() {
+
+            const weekContainer = document.getElementById('weekContainer');
+            weekContainer.innerHTML = ''; 
+
+            const today = new Date();
+            const dayOfWeek = today.getDay(); 
+            const startOfWeek = new Date(today); 
+            startOfWeek.setDate(today.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1)); 
+
+            const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(startOfWeek);
+                date.setDate(startOfWeek.getDate() + i); 
+
+                const dayName = daysOfWeek[i];
+                const dayNumber = date.getDate();
+
+               
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('item');
+
+                
+                if (date.toDateString() === today.toDateString()) {
+                    itemDiv.classList.add('active');
+                }
+
+                itemDiv.innerHTML = `
+                    <h5>${dayName}</h5>
+                    <a href="#">${dayNumber}</a>
+                `;
+
+                weekContainer.appendChild(itemDiv);
+            }
+        }
+
+        generateWeekCalendar();
+
+        let OpenOrNot = false;
+        dropdownMenu2 =document.getElementById('dropdown-menu2');
+        AdminSection = document.getElementById('AdminSection');
+        AdminSection.addEventListener('click', () => {
+            if(!OpenOrNot){
+                dropdownMenu2.style.visibility = 'visible';
+                OpenOrNot = true;
+            }
+            else{
+                dropdownMenu2.style.visibility = 'hidden';
+                OpenOrNot = false;
+            }
+            
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
