@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/icons8-microsoft-admin-30.png" type="image/x-icon">
+    <title>ABC Cinema Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>     
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="top-container">
+
+        <div class="nav">
+            <div class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUklEQVR4nO2VzyuEQRzGh2zrIrk68BdwdCJJSi0X5U9wc7O1bvLjTlL+BXLl5qbk5OTox4GslfaIiI8mj9r0tr7v7Ggu+9RcZp7v85n37TszzrWVWsAgUAIqwC5wBFwAN0AdeNOoa86vHcpbUe1AHuAscE88+aySBXyXI7QA9OnvDGvTi8AWcAzU5Lu1gM0yZHVbvS4yuJgKXEgF7koF7kwF7sgDfv2Hrn62gGsRwf2yVi3g04jgSVlPLOAdmdcNXqu2LeAZmS8jgqedsSEeVTAaAex7pvgnWIFrKjrzR6JF8IoJqsDehu5eaAFcBXrMYIXOqfgFGAkEz+eCZnT4AzCUsd5Mmy5UfN+1Bwp6AsaM4D1fGwxueFN/4O/Asn91tJalfXMXGy/7DeBT4efA1C/gB7Da7BQEC5gArjO+8goYD082SBdMWTA/lvycpbYtl0JfmNEFAAxYCEgAAAAASUVORK5CYII=" alt="microsoft-admin--v1">
+                <!-- <i class=''></i> --> <!--use svg if you want it set up-->
+                <a href="index.html"><span>ABC</span>Cinema</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="Movies.html">Movies</a>
+                <a href="Resevation.html">Resevetion</a>
+                <!-- <a href="#">Accounts</a> -->
+                <a href="Setting.html">Settings</a>
+            </div>  
+            <div class="right-section">
+                <i class='bx bx-bell'></i> <!--TODO: Send The Notifiction For Every CURD Operation And Save it TO the data Base-->
+                <i class='bx bx-search'></i> <!--TODO: Click the Serch and show the serch Bar, Get the Input From  Search Bar and Send it to the data base and get the Output -->
+                <div class="profile">
+                    <div class="info"> 
+                        <img src="assets/profile.png">
+                        <div>
+                            <a href="#">Admin</a>
+                            <p>Admin Name</p>
+                        </div><!--TODO: Admin & Name Base on the Registation Get the Input From Data Base-->
+                    </div>
+                    <i class='bx bx-chevron-down' id="AdminSection"></i> <!--TODO: Admin Drop down menu and link it to the relevent page-->
+                    <div class="dropdown-menu" id="dropdown-menu2">
+                        <ul>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z"></path>
+                                    </svg>My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">\
+                                        <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                                    </svg>My Contacts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="m2.344 15.271 2 3.46a1 1 0 0 0 1.366.365l1.396-.806c.58.457 1.221.832 1.895 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.598a8.094 8.094 0 0 0 1.895-1.112l1.396.806c.477.275 1.091.11 1.366-.365l2-3.46a1.004 1.004 0 0 0-.365-1.366l-1.372-.793a7.683 7.683 0 0 0-.002-2.224l1.372-.793c.476-.275.641-.89.365-1.366l-2-3.46a1 1 0 0 0-1.366-.365l-1.396.806A8.034 8.034 0 0 0 15 4.598V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.598A8.094 8.094 0 0 0 7.105 5.71L5.71 4.904a.999.999 0 0 0-1.366.365l-2 3.46a1.004 1.004 0 0 0 .365 1.366l1.372.793a7.683 7.683 0 0 0 0 2.224l-1.372.793c-.476.275-.641.89-.365 1.366zM12 8c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4z"></path>
+                                    </svg>Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: inline-flex ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+                                        <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path>
+                                    </svg>Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="status">
+
+            <div class="header">
+                <h4 id="big">Casting Movies</h4>
+            </div>
+
+            <div class="items-list">
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 8 Seat left</p>
+                            <p>- 92 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 35 Seat left</p>
+                            <p>- 65 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 20 Seat left</p>
+                            <p>- 80 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Venome The Last Dance</h5>
+                            <p>- 8 Seat left</p>
+                            <p>- 92 Seat sold-out</p>
+                        </div>
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="">
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>  <!--TODO: Get the Input From Data Base and Fill The Output-->
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="prog-status Prog-Movie-list">
+            <div class="header">
+                <h4>Reservation </h4>
+            </div> 
+
+            <div class="details">
+                <div class="item">
+                    <h2>Reservation</h2>
+                    <p>Casting Times And The Movie </p>
+                </div>
+                <!-- <div class="separator"></div>
+                <div class="item">
+                    <h2>RS 30,852</h2>
+                    <p>Today Revenue</p>
+                </div> -->
+            </div>
+
+
+            <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+
+                <table class="min-w-full divide-y divide-gray-200">
+
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Casting Time </th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booked Seats</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Spaces Seats</th>
+                      <th class="px-6 py-3"></th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <!-- Row 1 -->
+                    <tr>
+                      <td class="px-6 py-4 flex items-center space-x-4">
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="" class="w-10 h-10 rounded-full">
+                        <div>
+                          <div class="text-sm font-medium text-gray-900">Venom The Last Dance</div>
+                          <div class="text-sm text-gray-500">IMAX , Dolby Cinema , ScreenX </div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium text-gray-900">
+                          7.00 - 11.30
+                        </span>
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">80</div>
+                      </td>
+                      <td class="px-6 py-4 text-sm text-gray-500">20</td>
+                    
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr>
+                      <td class="px-6 py-4 flex items-center space-x-4">
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="" class="w-10 h-10 rounded-full">
+                        <div>
+                          <div class="text-sm font-medium text-gray-900">Venom The Last Dance</div>
+                          <div class="text-sm text-gray-500">IMAX , 4DX , Dolby Cinema , ScreenX</div>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium text-gray-900">
+                          7.00 - 11.30
+                        </span>
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">80</div>
+                      </td>
+
+                      <td class="px-6 py-4 text-sm text-gray-500">20</td>
+
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr>
+                        <td class="px-6 py-4 flex items-center space-x-4">
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="text-sm font-medium text-gray-900">Venom The Last Dance</div>
+                            <div class="text-sm text-gray-500">IMAX , 4DX , Dolby Cinema , ScreenX</div>
+                        </div>
+                        </td>
+                        <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium text-gray-900">
+                            7.00 - 11.30
+                        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">80</div>
+                        </td>
+
+                        <td class="px-6 py-4 text-sm text-gray-500">20</td>
+
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr>
+                        <td class="px-6 py-4 flex items-center space-x-4">
+                        <img src="https://imgs.search.brave.com/rsClooGDv5S-_DSyQdYTTIh3szxU7HCuyCCdf-fmZ0I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mL2E1/OGE3NzE5LTBkY2Yt/NGUwYi1iN2JiLWQy/YjcyNWRiYmI4ZS9k/aGh6amE4LTgwM2Ew/ODUzLWQ2NzUtNGMy/Ny04MTFmLTRlM2Zl/ZjEyNWNlNS5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/MkUxT0dFM056RTVM/VEJrWTJZdE5HVXdZ/aTFpTjJKaUxXUXlZ/amN5TldSaVltSTRa/Vnd2Wkdob2VtcGhP/QzA0TUROaE1EZzFN/eTFrTmpjMUxUUmpN/amN0T0RFeFppMDBa/VE5tWldZeE1qVmpa/VFV1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudW5IY01EVHlj/ZktKUHkzMEtIS0lX/U3BLNDZTbTNEdkE1/a1NEUGVVb0ZBRQ" alt="" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="text-sm font-medium text-gray-900">Venom The Last Dance</div>
+                            <div class="text-sm text-gray-500">IMAX , 4DX , Dolby Cinema , ScreenX</div>
+                        </div>
+                        </td>
+                        <td class="px-6 py-4">
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium text-gray-900">
+                            7.00 - 11.30
+                        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                        <div class="text-sm text-gray-900">80</div>
+                        </td>
+
+                        <td class="px-6 py-4 text-sm text-gray-500">20</td>
+
+                    </tr>
+                  </tbody> <!--TODO: Get the Input From Data Base and Fill The Output-->
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>        
+
+        let OpenOrNot = false;
+        dropdownMenu2 =document.getElementById('dropdown-menu2');
+        AdminSection = document.getElementById('AdminSection');
+        AdminSection.addEventListener('click', () => {
+            if(!OpenOrNot){
+                dropdownMenu2.style.visibility = 'visible';
+                OpenOrNot = true;
+            }
+            else{
+                dropdownMenu2.style.visibility = 'hidden';
+                OpenOrNot = false;
+            }
+            
+        });
+
+    </script>
+
+</body>
+
+</html>
