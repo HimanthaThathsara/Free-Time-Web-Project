@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+  font-family: "Bai Jamjuree", system-ui;
+}
+
+.loader svg {
+    width: 113px;
+    height: 156px;
+}
+.bg-warm-grey {
+  background-color: #f2f0eb;
+}
+.bg-warm-grey .svg-fill {
+  fill: #000000;
+}
+.bg-warm-grey h1,
+.bg-warm-grey h2,
+.bg-warm-grey h3,
+.bg-warm-grey h4,
+.bg-warm-grey h5,
+.bg-warm-grey h6 {
+  color: #000000;
+}
+.bg-warm-grey p,
+.bg-warm-grey a,
+.bg-warm-grey span,
+.bg-warm-grey a:visited,
+.bg-warm-grey a:hover {
+  color: #000000;
+}
+.bg-warm-grey p > a::after {
+  background-color: #000000;
+}
+.bg-warm-grey .button,
+.bg-warm-grey button,
+.bg-warm-grey input[type="button"],
+.bg-warm-grey input[type="reset"],
+.bg-warm-grey input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-warm-grey .cta:before,
+.building-block.carousel .bg-warm-grey .cta:before {
+  border-color: #000000;
+}
+.bg-warm-grey .cta:after,
+.building-block.carousel .bg-warm-grey .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-warm-grey-alt {
+  background-color: #f2f0eb;
+}
+.bg-warm-grey-alt .svg-fill {
+  fill: #000000;
+}
+.bg-warm-grey-alt h1,
+.bg-warm-grey-alt h2,
+.bg-warm-grey-alt h3,
+.bg-warm-grey-alt h4,
+.bg-warm-grey-alt h5,
+.bg-warm-grey-alt h6 {
+  color: #006241;
+}
+.bg-warm-grey-alt p,
+.bg-warm-grey-alt a,
+.bg-warm-grey-alt span,
+.bg-warm-grey-alt a:visited,
+.bg-warm-grey-alt a:hover {
+  color: #000000;
+}
+.bg-warm-grey-alt p > a::after {
+  background-color: #000000;
+}
+.bg-warm-grey-alt .button,
+.bg-warm-grey-alt button,
+.bg-warm-grey-alt input[type="button"],
+.bg-warm-grey-alt input[type="reset"],
+.bg-warm-grey-alt input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-warm-grey-alt .cta:before,
+.building-block.carousel .bg-warm-grey-alt .cta:before {
+  border-color: #000000;
+}
+.bg-warm-grey-alt .cta:after,
+.building-block.carousel .bg-warm-grey-alt .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-light-grey {
+  background-color: #faf9f7;
+}
+.bg-light-grey .svg-fill {
+  fill: #000000;
+}
+.bg-light-grey h1,
+.bg-light-grey h2,
+.bg-light-grey h3,
+.bg-light-grey h4,
+.bg-light-grey h5,
+.bg-light-grey h6 {
+  color: #000000;
+}
+.bg-light-grey p,
+.bg-light-grey a,
+.bg-light-grey span,
+.bg-light-grey a:visited,
+.bg-light-grey a:hover {
+  color: #000000;
+}
+.bg-light-grey p > a::after {
+  background-color: #000000;
+}
+.bg-light-grey .button,
+.bg-light-grey button,
+.bg-light-grey input[type="button"],
+.bg-light-grey input[type="reset"],
+.bg-light-grey input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-light-grey .cta:before,
+.building-block.carousel .bg-light-grey .cta:before {
+  border-color: #000000;
+}
+.bg-light-grey .cta:after,
+.building-block.carousel .bg-light-grey .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-white .svg-fill {
+  fill: #000000;
+}
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white h5,
+.bg-white h6 {
+  color: #000000;
+}
+.bg-white p,
+.bg-white a,
+.bg-white span,
+.bg-white a:visited,
+.bg-white a:hover {
+  color: #000000;
+}
+.bg-white p > a::after {
+  background-color: #000000;
+}
+.bg-white .button,
+.bg-white button,
+.bg-white input[type="button"],
+.bg-white input[type="reset"],
+.bg-white input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-white .cta:before,
+.building-block.carousel .bg-white .cta:before {
+  border-color: #000000;
+}
+.bg-white .cta:after,
+.building-block.carousel .bg-white .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-white-alt {
+  background-color: #ffffff;
+}
+.bg-white-alt .svg-fill {
+  fill: #000000;
+}
+.bg-white-alt h1,
+.bg-white-alt h2,
+.bg-white-alt h3,
+.bg-white-alt h4,
+.bg-white-alt h5,
+.bg-white-alt h6 {
+  color: #006241;
+}
+.bg-white-alt p,
+.bg-white-alt a,
+.bg-white-alt span,
+.bg-white-alt a:visited,
+.bg-white-alt a:hover {
+  color: #000000;
+}
+.bg-white-alt p > a::after {
+  background-color: #000000;
+}
+.bg-white-alt .button,
+.bg-white-alt button,
+.bg-white-alt input[type="button"],
+.bg-white-alt input[type="reset"],
+.bg-white-alt input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-white-alt .cta:before,
+.building-block.carousel .bg-white-alt .cta:before {
+  border-color: #000000;
+}
+.bg-white-alt .cta:after,
+.building-block.carousel .bg-white-alt .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-dark-green {
+  background-color: #1e3932;
+}
+.bg-dark-green .svg-fill {
+  fill: #ffffff;
+}
+.bg-dark-green h1,
+.bg-dark-green h2,
+.bg-dark-green h3,
+.bg-dark-green h4,
+.bg-dark-green h5,
+.bg-dark-green h6 {
+  color: #ffffff;
+}
+.bg-dark-green p,
+.bg-dark-green a,
+.bg-dark-green span,
+.bg-dark-green a:visited,
+.bg-dark-green a:hover {
+  color: #ffffff;
+}
+.bg-dark-green p > a::after {
+  background-color: #ffffff;
+}
+.bg-dark-green .button,
+.bg-dark-green button,
+.bg-dark-green input[type="button"],
+.bg-dark-green input[type="reset"],
+.bg-dark-green input[type="submit"] {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.bg-dark-green .cta:before,
+.building-block.carousel .bg-dark-green .cta:before {
+  border-color: #ffffff;
+}
+.bg-dark-green .cta:after,
+.building-block.carousel .bg-dark-green .cta:after {
+  border-color: #ffffff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-green {
+  background-color: #006241;
+}
+.bg-green .svg-fill {
+  fill: #ffffff;
+}
+.bg-green h1,
+.bg-green h2,
+.bg-green h3,
+.bg-green h4,
+.bg-green h5,
+.bg-green h6 {
+  color: #ffffff;
+}
+.bg-green p,
+.bg-green a,
+.bg-green span,
+.bg-green a:visited,
+.bg-green a:hover {
+  color: #ffffff;
+}
+.bg-green p > a::after {
+  background-color: #ffffff;
+}
+.bg-green .button,
+.bg-green button,
+.bg-green input[type="button"],
+.bg-green input[type="reset"],
+.bg-green input[type="submit"] {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.bg-green .cta:before,
+.building-block.carousel .bg-green .cta:before {
+  border-color: #ffffff;
+}
+.bg-green .cta:after,
+.building-block.carousel .bg-green .cta:after {
+  border-color: #ffffff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-mid-green {
+  background-color: #00754a;
+}
+.bg-mid-green .svg-fill {
+  fill: #ffffff;
+}
+.bg-mid-green h1,
+.bg-mid-green h2,
+.bg-mid-green h3,
+.bg-mid-green h4,
+.bg-mid-green h5,
+.bg-mid-green h6 {
+  color: #ffffff;
+}
+.bg-mid-green p,
+.bg-mid-green a,
+.bg-mid-green span,
+.bg-mid-green a:visited,
+.bg-mid-green a:hover {
+  color: #ffffff;
+}
+.bg-mid-green p > a::after {
+  background-color: #ffffff;
+}
+.bg-mid-green .button,
+.bg-mid-green button,
+.bg-mid-green input[type="button"],
+.bg-mid-green input[type="reset"],
+.bg-mid-green input[type="submit"] {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.bg-mid-green .cta:before,
+.building-block.carousel .bg-mid-green .cta:before {
+  border-color: #ffffff;
+}
+.bg-mid-green .cta:after,
+.building-block.carousel .bg-mid-green .cta:after {
+  border-color: #ffffff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-light-green {
+  background-color: #d4e9e2;
+}
+.bg-light-green .svg-fill {
+  fill: #1e3932;
+}
+.bg-light-green h1,
+.bg-light-green h2,
+.bg-light-green h3,
+.bg-light-green h4,
+.bg-light-green h5,
+.bg-light-green h6 {
+  color: #1e3932;
+}
+.bg-light-green p,
+.bg-light-green a,
+.bg-light-green span,
+.bg-light-green a:visited,
+.bg-light-green a:hover {
+  color: #1e3932;
+}
+.bg-light-green p > a::after {
+  background-color: #1e3932;
+}
+.bg-light-green .button,
+.bg-light-green button,
+.bg-light-green input[type="button"],
+.bg-light-green input[type="reset"],
+.bg-light-green input[type="submit"] {
+  border-color: #1e3932;
+  color: #1e3932;
+}
+.bg-light-green .cta:before,
+.building-block.carousel .bg-light-green .cta:before {
+  border-color: #1e3932;
+}
+.bg-light-green .cta:after,
+.building-block.carousel .bg-light-green .cta:after {
+  border-color: #1e3932;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-pink {
+  background-color: #ffe4e2;
+}
+.bg-pink .svg-fill {
+  fill: #000000;
+}
+.bg-pink h1,
+.bg-pink h2,
+.bg-pink h3,
+.bg-pink h4,
+.bg-pink h5,
+.bg-pink h6 {
+  color: #000000;
+}
+.bg-pink p,
+.bg-pink a,
+.bg-pink span,
+.bg-pink a:visited,
+.bg-pink a:hover {
+  color: #000000;
+}
+.bg-pink p > a::after {
+  background-color: #000000;
+}
+.bg-pink .button,
+.bg-pink button,
+.bg-pink input[type="button"],
+.bg-pink input[type="reset"],
+.bg-pink input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-pink .cta:before,
+.building-block.carousel .bg-pink .cta:before {
+  border-color: #000000;
+}
+.bg-pink .cta:after,
+.building-block.carousel .bg-pink .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-yellow {
+  background-color: #fff7d3;
+}
+.bg-yellow .svg-fill {
+  fill: #000000;
+}
+.bg-yellow h1,
+.bg-yellow h2,
+.bg-yellow h3,
+.bg-yellow h4,
+.bg-yellow h5,
+.bg-yellow h6 {
+  color: #000000;
+}
+.bg-yellow p,
+.bg-yellow a,
+.bg-yellow span,
+.bg-yellow a:visited,
+.bg-yellow a:hover {
+  color: #000000;
+}
+.bg-yellow p > a::after {
+  background-color: #000000;
+}
+.bg-yellow .button,
+.bg-yellow button,
+.bg-yellow input[type="button"],
+.bg-yellow input[type="reset"],
+.bg-yellow input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-yellow .cta:before,
+.building-block.carousel .bg-yellow .cta:before {
+  border-color: #000000;
+}
+.bg-yellow .cta:after,
+.building-block.carousel .bg-yellow .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-purple {
+  background-color: #d7c3dd;
+}
+.bg-purple .svg-fill {
+  fill: #000000;
+}
+.bg-purple h1,
+.bg-purple h2,
+.bg-purple h3,
+.bg-purple h4,
+.bg-purple h5,
+.bg-purple h6 {
+  color: #000000;
+}
+.bg-purple p,
+.bg-purple a,
+.bg-purple span,
+.bg-purple a:visited,
+.bg-purple a:hover {
+  color: #000000;
+}
+.bg-purple p > a::after {
+  background-color: #000000;
+}
+.bg-purple .button,
+.bg-purple button,
+.bg-purple input[type="button"],
+.bg-purple input[type="reset"],
+.bg-purple input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-purple .cta:before,
+.building-block.carousel .bg-purple .cta:before {
+  border-color: #000000;
+}
+.bg-purple .cta:after,
+.building-block.carousel .bg-purple .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-lightest-green {
+  background-color: #f2f8f6;
+}
+.bg-lightest-green .svg-fill {
+  fill: #006241;
+}
+.bg-lightest-green h1,
+.bg-lightest-green h2,
+.bg-lightest-green h3,
+.bg-lightest-green h4,
+.bg-lightest-green h5,
+.bg-lightest-green h6 {
+  color: #006241;
+}
+.bg-lightest-green p,
+.bg-lightest-green a,
+.bg-lightest-green span,
+.bg-lightest-green a:visited,
+.bg-lightest-green a:hover {
+  color: #006241;
+}
+.bg-lightest-green p > a::after {
+  background-color: #006241;
+}
+.bg-lightest-green .button,
+.bg-lightest-green button,
+.bg-lightest-green input[type="button"],
+.bg-lightest-green input[type="reset"],
+.bg-lightest-green input[type="submit"] {
+  border-color: #006241;
+  color: #006241;
+}
+.bg-lightest-green .cta:before,
+.building-block.carousel .bg-lightest-green .cta:before {
+  border-color: #006241;
+}
+.bg-lightest-green .cta:after,
+.building-block.carousel .bg-lightest-green .cta:after {
+  border-color: #006241;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-peach {
+  background-color: #f7ddcf;
+}
+.bg-peach .svg-fill {
+  fill: #000000;
+}
+.bg-peach h1,
+.bg-peach h2,
+.bg-peach h3,
+.bg-peach h4,
+.bg-peach h5,
+.bg-peach h6 {
+  color: #000000;
+}
+.bg-peach p,
+.bg-peach a,
+.bg-peach span,
+.bg-peach a:visited,
+.bg-peach a:hover {
+  color: #000000;
+}
+.bg-peach p > a::after {
+  background-color: #000000;
+}
+.bg-peach .button,
+.bg-peach button,
+.bg-peach input[type="button"],
+.bg-peach input[type="reset"],
+.bg-peach input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-peach .cta:before,
+.building-block.carousel .bg-peach .cta:before {
+  border-color: #000000;
+}
+.bg-peach .cta:after,
+.building-block.carousel .bg-peach .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-off-yellow {
+  background-color: #fbf4dd;
+}
+.bg-off-yellow .svg-fill {
+  fill: #1e3932;
+}
+.bg-off-yellow h1,
+.bg-off-yellow h2,
+.bg-off-yellow h3,
+.bg-off-yellow h4,
+.bg-off-yellow h5,
+.bg-off-yellow h6 {
+  color: #1e3932;
+}
+.bg-off-yellow p,
+.bg-off-yellow a,
+.bg-off-yellow span,
+.bg-off-yellow a:visited,
+.bg-off-yellow a:hover {
+  color: #1e3932;
+}
+.bg-off-yellow p > a::after {
+  background-color: #1e3932;
+}
+.bg-off-yellow .button,
+.bg-off-yellow button,
+.bg-off-yellow input[type="button"],
+.bg-off-yellow input[type="reset"],
+.bg-off-yellow input[type="submit"] {
+  border-color: #1e3932;
+  color: #1e3932;
+}
+.bg-off-yellow .cta:before,
+.building-block.carousel .bg-off-yellow .cta:before {
+  border-color: #1e3932;
+}
+.bg-off-yellow .cta:after,
+.building-block.carousel .bg-off-yellow .cta:after {
+  border-color: #1e3932;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-blue {
+  background-color: #d5e0e3;
+}
+.bg-blue .svg-fill {
+  fill: #1e3932;
+}
+.bg-blue h1,
+.bg-blue h2,
+.bg-blue h3,
+.bg-blue h4,
+.bg-blue h5,
+.bg-blue h6 {
+  color: #1e3932;
+}
+.bg-blue p,
+.bg-blue a,
+.bg-blue span,
+.bg-blue a:visited,
+.bg-blue a:hover {
+  color: #1e3932;
+}
+.bg-blue p > a::after {
+  background-color: #1e3932;
+}
+.bg-blue .button,
+.bg-blue button,
+.bg-blue input[type="button"],
+.bg-blue input[type="reset"],
+.bg-blue input[type="submit"] {
+  border-color: #1e3932;
+  color: #1e3932;
+}
+.bg-blue .cta:before,
+.building-block.carousel .bg-blue .cta:before {
+  border-color: #1e3932;
+}
+.bg-blue .cta:after,
+.building-block.carousel .bg-blue .cta:after {
+  border-color: #1e3932;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-dark-pink {
+  background-color: #f7d8e7;
+}
+.bg-dark-pink .svg-fill {
+  fill: #000000;
+}
+.bg-dark-pink h1,
+.bg-dark-pink h2,
+.bg-dark-pink h3,
+.bg-dark-pink h4,
+.bg-dark-pink h5,
+.bg-dark-pink h6 {
+  color: #000000;
+}
+.bg-dark-pink p,
+.bg-dark-pink a,
+.bg-dark-pink span,
+.bg-dark-pink a:visited,
+.bg-dark-pink a:hover {
+  color: #000000;
+}
+.bg-dark-pink p > a::after {
+  background-color: #000000;
+}
+.bg-dark-pink .button,
+.bg-dark-pink button,
+.bg-dark-pink input[type="button"],
+.bg-dark-pink input[type="reset"],
+.bg-dark-pink input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-dark-pink .cta:before,
+.building-block.carousel .bg-dark-pink .cta:before {
+  border-color: #000000;
+}
+.bg-dark-pink .cta:after,
+.building-block.carousel .bg-dark-pink .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-light-pink {
+  background-color: #f9e7e9;
+}
+.bg-light-pink .svg-fill {
+  fill: #000000;
+}
+.bg-light-pink h1,
+.bg-light-pink h2,
+.bg-light-pink h3,
+.bg-light-pink h4,
+.bg-light-pink h5,
+.bg-light-pink h6 {
+  color: #000000;
+}
+.bg-light-pink p,
+.bg-light-pink a,
+.bg-light-pink span,
+.bg-light-pink a:visited,
+.bg-light-pink a:hover {
+  color: #000000;
+}
+.bg-light-pink p > a::after {
+  background-color: #000000;
+}
+.bg-light-pink .button,
+.bg-light-pink button,
+.bg-light-pink input[type="button"],
+.bg-light-pink input[type="reset"],
+.bg-light-pink input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-light-pink .cta:before,
+.building-block.carousel .bg-light-pink .cta:before {
+  border-color: #000000;
+}
+.bg-light-pink .cta:after,
+.building-block.carousel .bg-light-pink .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.bg-light-purple {
+  background-color: #f3eaf4;
+}
+.bg-light-purple .svg-fill {
+  fill: #000000;
+}
+.bg-light-purple h1,
+.bg-light-purple h2,
+.bg-light-purple h3,
+.bg-light-purple h4,
+.bg-light-purple h5,
+.bg-light-purple h6 {
+  color: #000000;
+}
+.bg-light-purple p,
+.bg-light-purple a,
+.bg-light-purple span,
+.bg-light-purple a:visited,
+.bg-light-purple a:hover {
+  color: #000000;
+}
+.bg-light-purple p > a::after {
+  background-color: #000000;
+}
+.bg-light-purple .button,
+.bg-light-purple button,
+.bg-light-purple input[type="button"],
+.bg-light-purple input[type="reset"],
+.bg-light-purple input[type="submit"] {
+  border-color: #000000;
+  color: #000000;
+}
+.bg-light-purple .cta:before,
+.building-block.carousel .bg-light-purple .cta:before {
+  border-color: #000000;
+}
+.bg-light-purple .cta:after,
+.building-block.carousel .bg-light-purple .cta:after {
+  border-color: #000000;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+/* 
+.product-grid-item-image{
+    border-radius: 26px;
+} */
