@@ -1,0 +1,109 @@
+
+/* Font smoothing for better font rendering */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Highlight background and text color for selected text */
+::selection {
+    background: #0ae448; 
+    color: #100f0e; 
+}
+
+::-moz-selection {
+    background: #0ae448; 
+    color: #100f0e; 
+}
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+    width: 16px; 
+}
+
+/* Scrollbar track with gradient */
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #2f2f2f, #1c1c1c); 
+    border-radius: 0px; 
+    margin: 0px; 
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(112deg, #bbbaad 0%, #454545 100%); 
+    border-radius: 12px; 
+    border: 4px solid #2f2f2f; 
+    min-height: 20px; 
+    transition: background 0.3s ease, box-shadow 0.3s ease, width 0.3s ease; 
+}
+
+/* Scrollbar thumb hover state */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(112deg, #fa915c 0%, #fa6b43 100%); 
+    border: 4px solid #2f2f2f; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+/* Scrollbar thumb active (pressed) state */
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(112deg, #fffcdd 0%, #bffbbb 100%); 
+    border: 4px solid #2f2f2f; 
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.4); 
+}
+
+/* Firefox scrollbar styles */
+body {
+    scrollbar-width: thin; 
+    scrollbar-color: #bbbaad #2f2f2f; 
+}
+
+/* Edge and IE fallback */
+@supports (-ms-overflow-style: none) {
+    /* For Edge and older browsers */
+    ::-ms-scrollbar {
+        width: 16px;
+    }
+
+    ::-ms-scrollbar-track {
+        background: linear-gradient(135deg, #2f2f2f, #1c1c1c); 
+        border-radius: 10px;
+    }
+
+    ::-ms-scrollbar-thumb {
+        background: linear-gradient(112deg, #bbbaad 0%, #454545 100%); 
+        border-radius: 12px;
+        border: 4px solid #2f2f2f; 
+    }
+}
+
+/* Global Cursor Replacement */
+:root {
+    --cursor-default: url(https://cdn.prod.website-files.com/668c1b36b8aa59b66da33b25/66d04b1029e44c02a3ad09c1_cursor-seta.svg), auto;
+    --cursor-pointer: url(https://cdn.prod.website-files.com/668c1b36b8aa59b66da33b25/66d71bd6e83f2a75427d4fbc_dedinho-pixel-v2.svg), pointer;
+    --cursor-grab: url(https://cdn.prod.website-files.com/668c1b36b8aa59b66da33b25/6707b71c29e65fc410ebe81c_GRAB.svg), grab;
+    --cursor-grabbing: url(https://cdn.prod.website-files.com/668c1b36b8aa59b66da33b25/6707b71c6e1ffec59f2785b7_GRABBING.svg), grabbing;
+}
+
+/* Apply default custom cursor to body */
+body {
+    cursor: var(--cursor-default);
+}
+
+/* Replace default pointer cursor globally */
+a,
+button,
+[role="button"],
+.custom-pointer {
+    cursor: var(--cursor-pointer);
+}
+
+/* Replace default grab and grabbing cursors globally */
+.grab-element {
+    cursor: var(--cursor-grab);
+}
+
+.grab-element.is-dragging,
+.grab-element:active {
+    cursor: var(--cursor-grabbing);
+}

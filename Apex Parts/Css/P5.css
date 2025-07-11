@@ -1,0 +1,12 @@
+.container-p5jsnoisehalftone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none !important;
+    z-index: 99999; /* Ensure it's behind other content if needed */
+    opacity: 1; /* Full opacity */
+    /* Optional: Add a transition for smoother appearance if needed */
+    /* transition: opacity 10s ease-in-out; */
+}
