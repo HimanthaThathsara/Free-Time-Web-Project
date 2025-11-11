@@ -28,7 +28,7 @@
 
 - [ Overview](#-overview)
 - [ Features](#-features)
-- [ DEMO](#-demo)
+- [ Demo](#-demo)
 - [ Project Structure](#-project-structure)
 - [ Getting Started](#-getting-started)
   - [ Installation](#-installation)
@@ -59,7 +59,7 @@ CSS: 11.3% </code>
 
 ---
 
-## DEMO
+## Demo
 
 - 3D Rotating Slider Animation
   - https://himanthathathsara.github.io/Free-Time-Web-Project/3D%20Rotating%20Slider%20Animation/index.html
